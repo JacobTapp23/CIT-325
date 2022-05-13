@@ -1,0 +1,26 @@
+ Task Expected Results 
+-----------------------
+ Lab 7: Step 1: Task 1
+(1 row)
+
+ common_lookup_table | common_lookup_column | common_lookup_type 
+---------------------+----------------------+--------------------
+ PRICE               | ACTIVE_FLAG          | YES
+ PRICE               | ACTIVE_FLAG          | NO
+(2 rows)
+
+ Task Expected Results 
+-----------------------
+ Lab 7: Step 1: Task 2
+(1 row)
+
+ common_lookup_table | common_lookup_column | common_lookup_type 
+---------------------+----------------------+--------------------
+ PRICE               | PRICE_TYPE           | 1-DAY RENTAL
+ PRICE               | PRICE_TYPE           | 3-DAY RENTAL
+ PRICE               | PRICE_TYPE           | 5-DAY RENTAL
+ RENTAL_ITEM         | RENTAL_ITEM_TYPE     | 1-DAY RENTAL
+ RENTAL_ITEM         | RENTAL_ITEM_TYPE     | 3-DAY RENTAL
+ RENTAL_ITEM         | RENTAL_ITEM_TYPE     | 5-DAY RENTAL
+(6 rows)
+

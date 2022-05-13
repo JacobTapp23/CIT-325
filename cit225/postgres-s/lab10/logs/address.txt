@@ -1,0 +1,58 @@
+SET
+SET
+ current_setting 
+-----------------
+ address
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+   constraint_name    |   table_name    |   column_name   |  foreign_table_name   | foreign_column_name 
+----------------------+-----------------+-----------------+-----------------------+---------------------
+ videodb.fk_address_1 | videodb.address | contact_id      | videodb.contact       | contact_id
+ videodb.fk_address_2 | videodb.address | address_type    | videodb.common_lookup | common_lookup_id
+ videodb.fk_address_3 | videodb.address | created_by      | videodb.system_user   | system_user_id
+ videodb.fk_address_4 | videodb.address | last_updated_by | videodb.system_user   | system_user_id
+(4 rows)
+
+ table_name | ordinal_position |   column_name    | is_nullable |        data_type         
+------------+------------------+------------------+-------------+--------------------------
+ address    |                1 | address_id       | PRIMARY KEY | integer
+ address    |                2 | contact_id       | NOT NULL    | integer
+ address    |                3 | address_type     | NOT NULL    | integer
+ address    |                4 | city             | NOT NULL    | character varying(30)
+ address    |                5 | state_province   | NOT NULL    | character varying(30)
+ address    |                6 | postal_code      | NOT NULL    | character varying(20)
+ address    |                7 | created_by       | NOT NULL    | integer
+ address    |                8 | creation_date    | NOT NULL    | timestamp with time zone
+ address    |                9 | last_updated_by  | NOT NULL    | integer
+ address    |               10 | last_update_date | NOT NULL    | timestamp with time zone
+(10 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ address_pkey    | primary key
+(1 row)
+
+DROP INDEX
+CREATE INDEX
+DROP INDEX
+CREATE INDEX
+ tablename |   indexname   
+-----------+---------------
+ address   | address_pkey
+ address   | nq_address_n1
+ address   | nq_address_n2
+(3 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ address_pkey    | primary key
+(1 row)
+
+ table_name | column_name |     sequence_name      
+------------+-------------+------------------------
+ address    | address_id  | address_address_id_seq
+(1 row)
+

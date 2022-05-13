@@ -1,0 +1,5 @@
+ system_user_id | system_user_name | created_by | creator  
+----------------+------------------+------------+----------
+           1001 | DBA1             |          1 | SYSADMIN
+(1 row)
+

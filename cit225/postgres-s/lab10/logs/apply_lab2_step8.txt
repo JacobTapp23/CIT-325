@@ -1,0 +1,6 @@
+ first_name | middle_name | last_name 
+------------+-------------+-----------
+ Oscar      |             | Vizquel
+ Doreen     |             | Vizquel
+(2 rows)
+

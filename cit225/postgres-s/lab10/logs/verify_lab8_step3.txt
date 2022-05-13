@@ -1,0 +1,259 @@
+SET
+ Task Expected Results 
+-----------------------
+ Lab 8: Step 3: Task 1
+(1 row)
+
+ table_name  | ordinal_position |    column_name    | is_nullable |        data_type         
+-------------+------------------+-------------------+-------------+--------------------------
+ rental_item |                1 | rental_item_id    | PRIMARY KEY | integer
+ rental_item |                2 | rental_id         | NOT NULL    | integer
+ rental_item |                3 | item_id           | NOT NULL    | integer
+ rental_item |                4 | created_by        | NOT NULL    | integer
+ rental_item |                5 | creation_date     | NOT NULL    | timestamp with time zone
+ rental_item |                6 | last_updated_by   | NOT NULL    | integer
+ rental_item |                7 | last_update_date  | NOT NULL    | timestamp with time zone
+ rental_item |                8 | rental_item_type  | NOT NULL    | integer
+ rental_item |                9 | rental_item_price | NOT NULL    | numeric(12,2)
+(9 rows)
+
+CREATE TABLE
+CREATE INDEX
+SET
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 1: Task 1
+(1 row)
+
+ table_name  | ordinal_position |      column_name       | is_nullable |        data_type         
+-------------+------------------+------------------------+-------------+--------------------------
+ transaction |                1 | transaction_id         | PRIMARY KEY | integer
+ transaction |                2 | transaction_account    | NOT NULL    | character varying(15)
+ transaction |                3 | transaction_type       | NOT NULL    | integer
+ transaction |                4 | transaction_date       | NOT NULL    | date
+ transaction |                5 | transaction_amount     | NOT NULL    | numeric
+ transaction |                6 | rental_id              | NOT NULL    | integer
+ transaction |                7 | payment_method_type    | NOT NULL    | integer
+ transaction |                8 | payment_account_number | NOT NULL    | character varying(19)
+ transaction |                9 | created_by             | NOT NULL    | integer
+ transaction |               10 | creation_date          | NOT NULL    | timestamp with time zone
+ transaction |               11 | last_updated_by        | NOT NULL    | integer
+ transaction |               12 | last_update_date       | NOT NULL    | timestamp with time zone
+(12 rows)
+
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 1: Task 2
+(1 row)
+
+ table_name  | index_name  | attr_number |      column_name       
+-------------+-------------+-------------+------------------------
+ transaction | natural_key |           6 | rental_id
+ transaction | natural_key |           3 | transaction_type
+ transaction | natural_key |           4 | transaction_date
+ transaction | natural_key |           7 | payment_method_type
+ transaction | natural_key |           8 | payment_account_number
+ transaction | natural_key |           2 | transaction_account
+(6 rows)
+
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 2: Task 1
+(1 row)
+
+ common_lookup_table | common_lookup_column | common_lookup_type | common_lookup_meaning | common_lookup_code 
+---------------------+----------------------+--------------------+-----------------------+--------------------
+ TRANSACTION         | TRANSACTION_TYPE     | CREDIT             | Credit                | CR
+ TRANSACTION         | TRANSACTION_TYPE     | DEBIT              | Debit                 | DR
+ TRANSACTION         | PAYMENT_METHOD_TYPE  | DISCOVER_CARD      | Discover Card         | 
+ TRANSACTION         | PAYMENT_METHOD_TYPE  | VISA_CARD          | Visa Card             | 
+ TRANSACTION         | PAYMENT_METHOD_TYPE  | MASTER_CARD        | Master Card           | 
+ TRANSACTION         | PAYMENT_METHOD_TYPE  | CASH               | Cash                  | 
+(6 rows)
+
+CREATE TABLE
+CREATE INDEX
+SET
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 3: Task 1
+(1 row)
+
+ table_name | ordinal_position |   column_name    | is_nullable |        data_type         
+------------+------------------+------------------+-------------+--------------------------
+ airport    |                1 | airport_id       | PRIMARY KEY | integer
+ airport    |                2 | airport_code     | NOT NULL    | character varying(3)
+ airport    |                3 | airport_city     | NOT NULL    | character varying(30)
+ airport    |                4 | city             | NOT NULL    | character varying(30)
+ airport    |                5 | state_province   | NOT NULL    | character varying(30)
+ airport    |                6 | created_by       | NOT NULL    | integer
+ airport    |                7 | creation_date    | NOT NULL    | timestamp with time zone
+ airport    |                8 | last_updated_by  | NOT NULL    | integer
+ airport    |                9 | last_update_date | NOT NULL    | timestamp with time zone
+(9 rows)
+
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 3: Task 2
+(1 row)
+
+ table_name | index_name | attr_number |  column_name   
+------------+------------+-------------+----------------
+ airport    | nk_airport |           2 | airport_code
+ airport    | nk_airport |           3 | airport_city
+ airport    | nk_airport |           4 | city
+ airport    | nk_airport |           5 | state_province
+(4 rows)
+
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 4: Task 1
+(1 row)
+
+ code |  airport_city  |     city      | state_province 
+------+----------------+---------------+----------------
+ LAX  | Los Angeles    | Los Angeles   | California
+ SLC  | Salt Lake City | Provo         | Utah
+ SLC  | Salt Lake City | Spanish Fork  | Utah
+ SFO  | San Francisco  | San Francisco | California
+ SJC  | San Jose       | San Jose      | California
+ SJC  | San Jose       | San Carlos    | California
+(6 rows)
+
+CREATE TABLE
+SET
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 5: Task 1
+(1 row)
+
+  table_name  | ordinal_position |   column_name    | is_nullable |        data_type         
+--------------+------------------+------------------+-------------+--------------------------
+ account_list |                1 | account_list_id  | PRIMARY KEY | integer
+ account_list |                2 | account_number   | NOT NULL    | character varying(10)
+ account_list |                3 | consumed_date    |             | date
+ account_list |                4 | consumed_by      |             | integer
+ account_list |                5 | created_by       | NOT NULL    | integer
+ account_list |                6 | creation_date    | NOT NULL    | timestamp with time zone
+ account_list |                7 | last_updated_by  | NOT NULL    | integer
+ account_list |                8 | last_update_date | NOT NULL    | timestamp with time zone
+(8 rows)
+
+CREATE PROCEDURE
+CALL
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 6: Task 1
+(1 row)
+
+ Airport | # Accounts 
+---------+------------
+ LAX     |         50
+ SFO     |         50
+ SJC     |         50
+ SLC     |         50
+(4 rows)
+
+UPDATE 7
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 7: Task 1
+(1 row)
+
+ account_number |        full_name        |     city     |   state    
+----------------+-------------------------+--------------+------------
+ B293-71445     | Winn, Randi             | San Jose     | California
+ B293-71445     | Winn, Brian             | San Jose     | California
+ B293-71446     | Vizquel, Oscar          | San Jose     | California
+ B293-71446     | Vizquel, Doreen         | San Jose     | California
+ B293-71447     | Sweeney, Meaghan        | San Jose     | California
+ B293-71447     | Sweeney, Matthew        | San Jose     | California
+ B293-71447     | Sweeney, Ian M          | San Jose     | California
+ R11-514-34     | Clinton, Goeffrey Ward  | Provo        | Utah
+ R11-514-35     | Moss, Wendy             | Provo        | Utah
+ R11-514-36     | Gretelz, Simon Jonah    | Provo        | Utah
+ R11-514-37     | Royal, Elizabeth Jane   | Provo        | Utah
+ R11-514-38     | Smith, Brian Nathan     | Spanish Fork | Utah
+ US00011        | Potter, Harry           | Provo        | Utah
+ US00011        | Potter, Ginny           | Provo        | Utah
+ US00011        | Potter, Lily Luna       | Provo        | Utah
+(15 rows)
+
+CREATE PROCEDURE
+CALL
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 8: Task 1
+(1 row)
+
+ account_number |        full_name        |     city     |   state    
+----------------+-------------------------+--------------+------------
+ SJC-000001     | Winn, Randi             | San Jose     | California
+ SJC-000001     | Winn, Brian             | San Jose     | California
+ SJC-000002     | Vizquel, Oscar          | San Jose     | California
+ SJC-000002     | Vizquel, Doreen         | San Jose     | California
+ SJC-000003     | Sweeney, Meaghan        | San Jose     | California
+ SJC-000003     | Sweeney, Matthew        | San Jose     | California
+ SJC-000003     | Sweeney, Ian M          | San Jose     | California
+ SLC-000001     | Clinton, Goeffrey Ward  | Provo        | Utah
+ SLC-000002     | Moss, Wendy             | Provo        | Utah
+ SLC-000003     | Gretelz, Simon Jonah    | Provo        | Utah
+ SLC-000004     | Royal, Elizabeth Jane   | Provo        | Utah
+ SLC-000005     | Smith, Brian Nathan     | Spanish Fork | Utah
+ SLC-000006     | Potter, Harry           | Provo        | Utah
+ SLC-000006     | Potter, Ginny           | Provo        | Utah
+ SLC-000006     | Potter, Lily Luna       | Provo        | Utah
+(15 rows)
+
+CREATE TABLE
+SET
+ Task Expected Results 
+-----------------------
+ Lab 9: Step 9: Task 1
+(1 row)
+
+     table_name     | ordinal_position |      column_name       | is_nullable |       data_type       
+--------------------+------------------+------------------------+-------------+-----------------------
+ transaction_upload |                1 | account_number         | NOT NULL    | character varying(10)
+ transaction_upload |                2 | first_name             | NOT NULL    | character varying(20)
+ transaction_upload |                3 | middle_name            |             | character varying(20)
+ transaction_upload |                4 | last_name              | NOT NULL    | character varying(20)
+ transaction_upload |                5 | check_out_date         | NOT NULL    | date
+ transaction_upload |                6 | return_date            | NOT NULL    | date
+ transaction_upload |                7 | rental_item_type       | NOT NULL    | character varying(12)
+ transaction_upload |                8 | transaction_type       | NOT NULL    | character varying(14)
+ transaction_upload |                9 | transaction_amount     | NOT NULL    | numeric
+ transaction_upload |               10 | transaction_date       | NOT NULL    | date
+ transaction_upload |               11 | item_id                | NOT NULL    | integer
+ transaction_upload |               12 | payment_method_type    | NOT NULL    | character varying(14)
+ transaction_upload |               13 | payment_account_number | NOT NULL    | character varying(19)
+(13 rows)
+
+    Task Identifier     
+------------------------
+ Lab 9: Step 10: Task 1
+(1 row)
+
+DO
+ Task Expected Results  
+------------------------
+ Lab 9: Step 10: Task 1
+(1 row)
+
+ count 
+-------
+ 11520
+(1 row)
+

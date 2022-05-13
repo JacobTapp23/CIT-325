@@ -1,0 +1,16 @@
+SET
+SET
+ current_setting 
+-----------------
+ videodb
+(1 row)
+
+ sequence_name 
+---------------
+(0 rows)
+
+DO
+ sequence_name 
+---------------
+(0 rows)
+

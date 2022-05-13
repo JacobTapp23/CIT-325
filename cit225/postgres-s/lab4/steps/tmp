@@ -1,0 +1,14 @@
+
+SELECT   cl.common_lookup_id
+,        cl.common_lookup_context
+,        cl.common_lookup_type
+,        COUNT(m.credit_card_type) AS credit_cards
+FROM     member m JOIN common_lookup cl
+ON       m.credit_card_type = cl.common_lookup_id 
+WHERE    cl.common_lookup_type IN
+           ('DISCOVER_CARD'
+	   ,'MASTER_CARD'
+           ,'VISA_CARD')
+GROUP BY cl.common_lookup_id
+,        cl.common_lookup_context
+,        cl.common_lookup_type;

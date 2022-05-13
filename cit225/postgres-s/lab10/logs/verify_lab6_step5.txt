@@ -1,0 +1,12 @@
+         Task Identifier          
+----------------------------------
+ Lab 6: Step 5: Task 1, 2, 3, & 4
+(1 row)
+
+ account_number |     full_name      | street_address | city  | state | postal_code 
+----------------+--------------------+----------------+-------+-------+-------------
+ US00011        | Potter, Harry      | 900 E 300 N    | Provo | Utah  | 84601
+ US00011        | Potter, Ginny      | 900 E 300 N    | Provo | Utah  | 84601
+ US00011        | Potter, Lily Luna  | 900 E 300 N    | Provo | Utah  | 84601
+(3 rows)
+

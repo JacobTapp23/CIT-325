@@ -1,0 +1,6 @@
+declare
+  lv_list list_jar;
+begin
+  my_procedure(lv_list);
+end;
+/

@@ -1,0 +1,30 @@
+Debug X ... [1]                                                                 
+Debug X ... [2]                                                                 
+Debug X ... [3]                                                                 
+Debug X ... [4]                                                                 
+Debug X ... [5]                                                                 
+Debug X ... [6]                                                                 
+Debug X ... [7]                                                                 
+Debug X ... [8]                                                                 
+Debug X ... [9]                                                                 
+Debug X ... [10]                                                                
+Debug X ... [11]                                                                
+Debug A ... [DWARF_T]                                                           
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+TYPE_NAME                      SUPERTYPE_NAME                                   
+------------------------------ ------------------------------                   
+CONTACT_NAME_STRUCT                                                             
+CONTACT_LIST_TYPE                                                               
+STREET_ADDRESS_TABLE                                                            
+BASE_T                                                                          
+
+Debug ... [BASE_T]                                                              
+
+PL/SQL procedure successfully completed.
+

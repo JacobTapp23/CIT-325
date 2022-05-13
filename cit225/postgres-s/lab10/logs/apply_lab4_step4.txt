@@ -1,0 +1,6 @@
+ last_name | account_number | credit_card_number  |      ?column?      
+-----------+----------------+---------------------+--------------------
+ Vizquel   | B293-71446     | 2222-3333-4444-5555 | San Jose, CA 95192
+ Vizquel   | B293-71446     | 2222-3333-4444-5555 | San Jose, CA 95192
+(2 rows)
+

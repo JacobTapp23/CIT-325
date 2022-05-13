@@ -1,0 +1,8 @@
+ last_name | account_number |     c_address      |   telephone    
+-----------+----------------+--------------------+----------------
+ Vizquel   | B293-71446     | 12 El Camino Real +| (408) 222-2222
+           |                | San Jose, CA 95192 | 
+ Vizquel   | B293-71446     | 12 El Camino Real +| (408) 222-2222
+           |                | San Jose, CA 95192 | 
+(2 rows)
+

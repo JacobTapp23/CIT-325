@@ -1,0 +1,20 @@
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ account_number |    full_name     |   city   | state_province |     telephone      
+----------------+------------------+----------+----------------+--------------------
+ B293-71447     | Sweeney, Meaghan | San Jose | CA             | USA-(408) 333-3333
+ B293-71447     | Sweeney, Matthew | San Jose | CA             | USA-(408) 333-3333
+ B293-71447     | Sweeney, Ian M   | San Jose | CA             | USA-(408) 333-3333
+(3 rows)
+

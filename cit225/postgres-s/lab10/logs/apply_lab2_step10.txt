@@ -1,0 +1,9 @@
+        item_title        | item_release_date 
+--------------------------+-------------------
+ RoboCop                  | 2003-07-24
+ Pirates of the Caribbean | 2003-06-30
+ The Chronicles of Narnia | 2003-06-30
+ MarioKart                | 2003-11-17
+ Splinter Cell            | 2003-04-08
+(5 rows)
+

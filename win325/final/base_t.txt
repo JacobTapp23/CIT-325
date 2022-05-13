@@ -1,0 +1,10 @@
+
+Type created.
+
+
+Type body created.
+
+[1][BASE_T]                                                                     
+
+PL/SQL procedure successfully completed.
+

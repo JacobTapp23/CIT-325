@@ -1,0 +1,39 @@
+DROP TABLE ACCOUNT_LIST;                                                        
+DROP SEQUENCE ACCOUNT_LIST_S1;                                                  
+DROP TABLE ADDRESS;                                                             
+DROP INDEX ADDRESS_N1;                                                          
+DROP SEQUENCE ADDRESS_S1;                                                       
+DROP PROCEDURE ADD_CONTACT;                                                     
+DROP PROCEDURE ADD_MEMBER;                                                      
+DROP TABLE AIRPORT;                                                             
+DROP SEQUENCE AIRPORT_S1;                                                       
+DROP INDEX AIRPORT_U1;                                                          
+DROP TABLE CALENDAR;                                                            
+DROP SEQUENCE CALENDAR_S1;                                                      
+DROP TABLE COMMON_LOOKUP;                                                       
+DROP INDEX COMMON_LOOKUP_N1;                                                    
+DROP TYPE COMMON_LOOKUP_OBJ;                                                    
+DROP SEQUENCE COMMON_LOOKUP_S1;                                                 
+DROP TYPE COMMON_LOOKUP_TAB;                                                    
+DROP INDEX COMMON_LOOKUP_U2;                                                    
+DROP TABLE CONTACT;                                                             
+DROP TYPE CONTACT_LIST_TYPE;                                                    
+DROP INDEX CONTACT_N1;                                                          
+DROP TYPE CONTACT_NAME_STRUCT;                                                  
+DROP SEQUENCE CONTACT_S1;                                                       
+DROP VIEW CURRENT_RENTAL;                                                       
+DROP TABLE ITEM;                                                                
+DROP SEQUENCE ITEM_S;                                                           
+DROP SEQUENCE ITEM_S1;                                                          
+DROP TABLE LOGGER;                                                              
+DROP INDEX LOGGER_PK;                                                           
+DROP SEQUENCE LOGGER_S;                                                         
+DROP TABLE LOGMNRC_CONCOL_GG;                                                   
+BEGIN
+*
+ERROR at line 1:
+ORA-16294: operation not allowed on a LogMiner table 
+ORA-06512: at line 26 
+ORA-06512: at line 26 
+
+

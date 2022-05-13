@@ -1,0 +1,26 @@
+
+Type created.
+
+  1  CREATE OR REPLACE
+  2    TYPE dwarf_t UNDER base_t
+  3    ( name  VARCHAR2(30)
+  4    , genus VARCHAR2(30)
+  5    , CONSTRUCTOR FUNCTION dwarf_t
+  6    ( name  VARCHAR2
+  7    , genus VARCHAR2 ) RETURN SELF AS RESULT
+  8    , MEMBER PROCEDURE set_name
+  9      ( name  VARCHAR2 )
+ 10    , MEMBER PROCEDURE set_genus
+ 11      ( genus VARCHAR2 )
+ 12    , OVERRIDING MEMBER FUNCTION  get_name RETURN VARCHAR2
+ 13    , MEMBER FUNCTION  get_genus RETURN VARCHAR2
+ 14    , OVERRIDING MEMBER FUNCTION to_string RETURN VARCHAR2 )
+ 15*   INSTANTIABLE NOT FINAL;
+No errors.
+
+Warning: Type Body created with compilation errors.
+
+[1][BASE_T]                                                                     
+
+PL/SQL procedure successfully completed.
+

@@ -1,0 +1,6 @@
+ first_name | middle_name | last_name 
+------------+-------------+-----------
+ Meaghan    |             | Sweeney
+ Matthew    |             | Sweeney
+(2 rows)
+

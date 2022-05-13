@@ -1,0 +1,16 @@
+SET
+SET
+ current_setting 
+-----------------
+ videodb
+(1 row)
+
+ table_name 
+------------
+(0 rows)
+
+DO
+ table_name 
+------------
+(0 rows)
+

@@ -1,0 +1,41 @@
+ Task Expected Results 
+-----------------------
+ Lab 7: Step 2: Task 1
+(1 row)
+
+ rental_item_type | common_lookup_id | common_lookup_code | return_date | check_out_date | lookup_code 
+------------------+------------------+--------------------+-------------+----------------+-------------
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+             1028 |             1028 | 1                  | 2022-02-24  | 2022-02-23     | 1
+             1028 |             1028 | 1                  | 2022-02-24  | 2022-02-23     | 1
+             1029 |             1029 | 3                  | 2022-02-26  | 2022-02-23     | 3
+             1030 |             1030 | 5                  | 2022-02-28  | 2022-02-23     | 5
+(13 rows)
+
+SET
+ Task Expected Results 
+-----------------------
+ Lab 7: Step 2: Task 2
+(1 row)
+
+ table_name  | ordinal_position |    column_name    | is_nullable |        data_type         
+-------------+------------------+-------------------+-------------+--------------------------
+ rental_item |                1 | rental_item_id    | PRIMARY KEY | integer
+ rental_item |                2 | rental_id         | NOT NULL    | integer
+ rental_item |                3 | item_id           | NOT NULL    | integer
+ rental_item |                4 | created_by        | NOT NULL    | integer
+ rental_item |                5 | creation_date     | NOT NULL    | timestamp with time zone
+ rental_item |                6 | last_updated_by   | NOT NULL    | integer
+ rental_item |                7 | last_update_date  | NOT NULL    | timestamp with time zone
+ rental_item |                8 | rental_item_type  | NOT NULL    | integer
+ rental_item |                9 | rental_item_price |             | numeric(12,2)
+(9 rows)
+

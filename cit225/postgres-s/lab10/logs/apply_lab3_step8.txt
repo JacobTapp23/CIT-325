@@ -1,0 +1,17 @@
+         item_title          | item_rating 
+-----------------------------+-------------
+ A Man for All Seasons       | G
+ Around the World in 80 Days | G
+ Beau Geste                  | PG
+ Camelot                     | G
+ Hook                        | PG
+ I Remember Mama             | NR
+ Star Wars I                 | PG
+ Star Wars II                | PG
+ Star Wars II                | PG
+ Star Wars III               | PG13
+ The Chronicles of Narnia    | PG
+ The Hunt for Red October    | PG
+ Tora! Tora! Tora!           | G
+(13 rows)
+

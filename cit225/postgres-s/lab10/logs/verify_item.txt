@@ -1,0 +1,52 @@
+SET
+SET
+ current_setting 
+-----------------
+ item
+(1 row)
+
+  constraint_name  |  table_name  |   column_name   |  foreign_table_name   | foreign_column_name 
+-------------------+--------------+-----------------+-----------------------+---------------------
+ videodb.fk_item_1 | videodb.item | item_type       | videodb.common_lookup | common_lookup_id
+ videodb.fk_item_2 | videodb.item | created_by      | videodb.system_user   | system_user_id
+ videodb.fk_item_3 | videodb.item | last_updated_by | videodb.system_user   | system_user_id
+ videodb.fk_item_4 | videodb.item | rating_id       | videodb.rating        | rating_id
+(4 rows)
+
+ table_name | ordinal_position |    column_name    | is_nullable |        data_type         
+------------+------------------+-------------------+-------------+--------------------------
+ item       |                1 | item_id           | PRIMARY KEY | integer
+ item       |                1 | item_id           | PRIMARY KEY | integer
+ item       |                2 | item_barcode      | NOT NULL    | character varying(14)
+ item       |                3 | item_type         | NOT NULL    | integer
+ item       |                4 | item_title        | NOT NULL    | character varying(60)
+ item       |                5 | item_subtitle     |             | character varying(60)
+ item       |                6 | item_rating       | NOT NULL    | character varying(8)
+ item       |                7 | item_release_date | NOT NULL    | date
+ item       |                8 | created_by        | NOT NULL    | integer
+ item       |                9 | creation_date     | NOT NULL    | timestamp with time zone
+ item       |               10 | last_updated_by   | NOT NULL    | integer
+ item       |               11 | last_update_date  | NOT NULL    | timestamp with time zone
+ item       |               12 | rating_id         | NOT NULL    | integer
+(13 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ item_pkey       | primary key
+(1 row)
+
+ tablename | indexname 
+-----------+-----------
+ item      | item_pkey
+(1 row)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ item_pkey       | primary key
+(1 row)
+
+ table_name | column_name |  sequence_name   
+------------+-------------+------------------
+ item       | item_id     | item_item_id_seq
+(1 row)
+

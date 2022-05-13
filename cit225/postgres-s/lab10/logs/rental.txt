@@ -1,0 +1,53 @@
+SET
+SET
+ current_setting 
+-----------------
+ rental
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+   constraint_name   |   table_name   |   column_name   | foreign_table_name  | foreign_column_name 
+---------------------+----------------+-----------------+---------------------+---------------------
+ videodb.fk_rental_1 | videodb.rental | customer_id     | videodb.contact     | contact_id
+ videodb.fk_rental_2 | videodb.rental | created_by      | videodb.system_user | system_user_id
+ videodb.fk_rental_3 | videodb.rental | last_updated_by | videodb.system_user | system_user_id
+(3 rows)
+
+ table_name | ordinal_position |   column_name    | is_nullable |        data_type         
+------------+------------------+------------------+-------------+--------------------------
+ rental     |                1 | rental_id        | PRIMARY KEY | integer
+ rental     |                2 | customer_id      | NOT NULL    | integer
+ rental     |                3 | check_out_date   | NOT NULL    | date
+ rental     |                4 | return_date      | NOT NULL    | date
+ rental     |                5 | created_by       | NOT NULL    | integer
+ rental     |                6 | creation_date    | NOT NULL    | timestamp with time zone
+ rental     |                7 | last_updated_by  | NOT NULL    | integer
+ rental     |                8 | last_update_date | NOT NULL    | timestamp with time zone
+(8 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ rental_pkey     | primary key
+(1 row)
+
+DROP INDEX
+CREATE INDEX
+DROP INDEX
+CREATE INDEX
+ tablename |  indexname  
+-----------+-------------
+ rental    | rental_pkey
+(1 row)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ rental_pkey     | primary key
+(1 row)
+
+ table_name | column_name |    sequence_name     
+------------+-------------+----------------------
+ rental     | rental_id   | rental_rental_id_seq
+(1 row)
+

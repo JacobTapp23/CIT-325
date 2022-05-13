@@ -1,0 +1,12 @@
+ last_name | total_names 
+-----------+-------------
+ Clinton   |           1
+ Gretelz   |           1
+ Moss      |           1
+ Royal     |           1
+ Smith     |           1
+ Sweeney   |           3
+ Vizquel   |           2
+ Winn      |           2
+(8 rows)
+

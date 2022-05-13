@@ -1,0 +1,16 @@
+  /* Insert row in tweetie_bird table at bottom of chain. */
+  PROCEDURE tweetie_bird 
+  ( pv_tweetie_bird_house  VARCHAR2
+  , pv_grandma_id          NUMBER ) IS
+
+  BEGIN
+    /* Insert row into tweetie_bird table. */
+    INSERT INTO tweetie_bird
+    ( tweetie_bird_id
+    , tweetie_bird_house
+    , grandma_id )
+    VALUES
+    ( tweetie_bird_seq.NEXTVAL
+    , pv_tweetie_bird_house
+    , pv_grandma_id );
+  END;

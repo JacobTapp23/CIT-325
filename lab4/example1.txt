@@ -1,0 +1,117 @@
+on the first day of Christmas                                                   
+My true love gave to me:                                                        
+A partridge in a pear tree.
+                                                    
+on the second day of Christmas                                                  
+My true love gave to me:                                                        
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the third day of Christmas                                                   
+My true love gave to me:                                                        
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the fourth day of Christmas                                                  
+My true love gave to me:                                                        
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the fifth day of Christmas                                                   
+My true love gave to me:                                                        
+Five gold rings,                                                                
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the sixth day of Christmas                                                   
+My true love gave to me:                                                        
+Six geese a-laying,                                                             
+Five gold rings,                                                                
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the seventh day of Christmas                                                 
+My true love gave to me:                                                        
+Seven swans a-swimming,                                                         
+Six geese a-laying,                                                             
+Five gold rings,                                                                
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the eighth day of Christmas                                                  
+My true love gave to me:                                                        
+Eight maids a-milking,                                                          
+Seven swans a-swimming,                                                         
+Six geese a-laying,                                                             
+Five gold rings,                                                                
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the nineth day of Christmas                                                  
+My true love gave to me:                                                        
+Nine ladies dancing,                                                            
+Eight maids a-milking,                                                          
+Seven swans a-swimming,                                                         
+Six geese a-laying,                                                             
+Five gold rings,                                                                
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the tenth day of Christmas                                                   
+My true love gave to me:                                                        
+Ten lords a-leaping,                                                            
+Nine ladies dancing,                                                            
+Eight maids a-milking,                                                          
+Seven swans a-swimming,                                                         
+Six geese a-laying,                                                             
+Five gold rings,                                                                
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the eleventh day of Christmas                                                
+My true love gave to me:                                                        
+Eleven pipers piping,                                                           
+Ten lords a-leaping,                                                            
+Nine ladies dancing,                                                            
+Eight maids a-milking,                                                          
+Seven swans a-swimming,                                                         
+Six geese a-laying,                                                             
+Five gold rings,                                                                
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+on the twelveth day of Christmas                                                
+My true love gave to me:                                                        
+Twelve drummers drumming,                                                       
+Eleven pipers piping,                                                           
+Ten lords a-leaping,                                                            
+Nine ladies dancing,                                                            
+Eight maids a-milking,                                                          
+Seven swans a-swimming,                                                         
+Six geese a-laying,                                                             
+Five gold rings,                                                                
+Four calling birds,                                                             
+Three French hens,                                                              
+Two turtle doves,                                                               
+and a partridge in a pear tree.
+                                                
+
+PL/SQL procedure successfully completed.
+

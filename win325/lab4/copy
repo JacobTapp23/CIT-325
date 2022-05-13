@@ -1,0 +1,5 @@
+DECLARE
+  /* Declare an array of days and gifts. */
+  TYPE days IS TABLE OF VARCHAR2(8);
+  TYPE gifts IS TABLE OF lyric;
+

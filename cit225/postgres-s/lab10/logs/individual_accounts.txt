@@ -1,0 +1,14 @@
+CALL
+CALL
+CALL
+CALL
+CALL
+ account_number |     full_name      |     city     | state_province |     telephone      
+----------------+--------------------+--------------+----------------+--------------------
+ R11-514-34     | Clinton, GoeffreyW | Provo        | Utah           | 001-(801) 423-1234
+ R11-514-35     | Moss, Wendy        | Provo        | Utah           | 001-(801) 423-1235
+ R11-514-36     | Gretelz, SimonJ    | Provo        | Utah           | 001-(801) 423-1236
+ R11-514-37     | Royal, ElizabethJ  | Provo        | Utah           | 001-(801) 423-1237
+ R11-514-38     | Smith, BrianN      | Spanish Fork | Utah           | 001-(801) 423-1238
+(5 rows)
+

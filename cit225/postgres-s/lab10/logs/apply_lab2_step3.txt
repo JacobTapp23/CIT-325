@@ -1,0 +1,16 @@
+     city     | state_province | postal_code 
+--------------+----------------+-------------
+ San Jose     | CA             | 95192
+ San Jose     | CA             | 95192
+ San Jose     | CA             | 95192
+ San Jose     | CA             | 95192
+ San Jose     | CA             | 95192
+ San Jose     | CA             | 95192
+ San Jose     | CA             | 95192
+ Provo        | Utah           | 84606
+ Provo        | Utah           | 84606
+ Provo        | Utah           | 84606
+ Provo        | Utah           | 84606
+ Spanish Fork | Utah           | 84606
+(12 rows)
+

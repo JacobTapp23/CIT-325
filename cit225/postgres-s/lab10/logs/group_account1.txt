@@ -1,0 +1,15 @@
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ account_number |  full_name  |   city   | state_province |     telephone      
+----------------+-------------+----------+----------------+--------------------
+ B293-71445     | Winn, Randi | San Jose | CA             | 001-(408) 111-1111
+ B293-71445     | Winn, Brian | San Jose | CA             | 001-(408) 111-1111
+(2 rows)
+

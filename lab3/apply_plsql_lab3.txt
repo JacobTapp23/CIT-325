@@ -1,0 +1,34 @@
+Print string [10]                                                               
+Print string [Ten]                                                              
+Print string [Twelve12]                                                         
+Print string [28-FEB-2016]                                                      
+
+PL/SQL procedure successfully completed.
+
+
+Function created.
+
+Does match date:     [15-JAN-2017][15-JAN-17]                                   
+
+PL/SQL procedure successfully completed.
+
+Does not match date: [31-APR-2017][]                                            
+
+PL/SQL procedure successfully completed.
+
+Does match date:     [10-JAN-2001][10-JAN-01]                                   
+Does not match date: [29-FEB-2003][]                                            
+Does match date:     [28-FEB-15][28-FEB-15]                                     
+Does match date:     [28-FEB-2016][28-FEB-16]                                   
+Does not match date: [31-JUN-2007][]                                            
+
+PL/SQL procedure successfully completed.
+
+Does match date: [10-JAN-2001][10-JAN-01]                                       
+Does match date: [29-FEB-2003][]                                                
+Does match date: [28-FEB-15][28-FEB-15]                                         
+Does match date: [28-FEB-2016][28-FEB-16]                                       
+Does match date: [31-JUN-2007][]                                                
+
+PL/SQL procedure successfully completed.
+

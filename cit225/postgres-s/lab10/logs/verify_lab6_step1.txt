@@ -1,0 +1,38 @@
+SET
+ current_setting 
+-----------------
+ rental_item
+(1 row)
+
+      Task Identifier      
+---------------------------
+ Lab 6: Step 1: Task 1 & 2
+(1 row)
+
+ table_name  | ordinal_position |    column_name    | is_nullable |        data_type         
+-------------+------------------+-------------------+-------------+--------------------------
+ rental_item |                1 | rental_item_id    | PRIMARY KEY | integer
+ rental_item |                2 | rental_id         | NOT NULL    | integer
+ rental_item |                3 | item_id           | NOT NULL    | integer
+ rental_item |                4 | created_by        | NOT NULL    | integer
+ rental_item |                5 | creation_date     | NOT NULL    | timestamp with time zone
+ rental_item |                6 | last_updated_by   | NOT NULL    | integer
+ rental_item |                7 | last_update_date  | NOT NULL    | timestamp with time zone
+ rental_item |                8 | rental_item_type  |             | integer
+ rental_item |                9 | rental_item_price |             | numeric(12,2)
+(9 rows)
+
+    Task Identifier    
+-----------------------
+ Lab 6: Step 1: Task 3
+(1 row)
+
+ table_from  |   foreign_key    |                           pg_get_constraintdef                            
+-------------+------------------+---------------------------------------------------------------------------
+ rental_item | fk_rental_item_1 | FOREIGN KEY (rental_id) REFERENCES rental(rental_id)
+ rental_item | fk_rental_item_2 | FOREIGN KEY (item_id) REFERENCES item(item_id)
+ rental_item | fk_rental_item_3 | FOREIGN KEY (created_by) REFERENCES system_user(system_user_id)
+ rental_item | fk_rental_item_4 | FOREIGN KEY (last_updated_by) REFERENCES system_user(system_user_id)
+ rental_item | fk_rental_item_5 | FOREIGN KEY (rental_item_type) REFERENCES common_lookup(common_lookup_id)
+(5 rows)
+

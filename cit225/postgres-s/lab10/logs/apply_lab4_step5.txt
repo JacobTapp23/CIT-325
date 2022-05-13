@@ -1,0 +1,8 @@
+ last_name | account_number | credit_card_number  |      address       
+-----------+----------------+---------------------+--------------------
+ Vizquel   | B293-71446     | 2222-3333-4444-5555 | 12 El Camino Real +
+           |                |                     | San Jose, CA 95192
+ Vizquel   | B293-71446     | 2222-3333-4444-5555 | 12 El Camino Real +
+           |                |                     | San Jose, CA 95192
+(2 rows)
+

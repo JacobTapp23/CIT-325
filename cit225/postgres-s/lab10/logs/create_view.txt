@@ -1,0 +1,25 @@
+ member_id | members | common_lookup_type 
+-----------+---------+--------------------
+      1001 |       2 | GROUP
+      1002 |       2 | GROUP
+      1003 |       3 | GROUP
+      1004 |       1 | INDIVIDUAL
+      1005 |       1 | INDIVIDUAL
+      1006 |       1 | INDIVIDUAL
+      1007 |       1 | INDIVIDUAL
+      1008 |       1 | INDIVIDUAL
+(8 rows)
+
+CREATE VIEW
+    full_name     |          title           | check_out_date | return_date 
+------------------+--------------------------+----------------+-------------
+ Winn, Brian      | RoboCop                  | 2022-02-23     | 2022-02-28
+ Winn, Brian      | The Hunt for Red October | 2022-02-23     | 2022-02-28
+ Vizquel, Doreen  | I Remember Mama          | 2022-02-23     | 2022-02-28
+ Vizquel, Oscar   | Star Wars I              | 2022-02-23     | 2022-02-28
+ Vizquel, Oscar   | Star Wars II             | 2022-02-23     | 2022-02-28
+ Vizquel, Oscar   | Star Wars III            | 2022-02-23     | 2022-02-28
+ Sweeney, Ian M   | Cars                     | 2022-02-23     | 2022-02-28
+ Sweeney, Meaghan | Hook                     | 2022-02-23     | 2022-02-28
+(8 rows)
+

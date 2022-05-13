@@ -1,0 +1,18 @@
+  FOR i IN 1..lv_rating_agency_tab.LAST LOOP
+    INSERT INTO rating_agency
+    ( rating_agency_id
+    , rating
+    , rating_agency
+    , created_by
+    , creation_date
+    , last_updated_by
+    , last_update_date )
+    VALUES
+    ( lv_rating_agency_tab(i).rating_agency_id
+    , lv_rating_agency_tab(i).rating
+    , lv_rating_agency_tab(i).rating_agency
+    , lv_created_by
+    , lv_creation_date
+    , lv_last_updated_by
+    , lv_last_update_date );
+  END LOOP;

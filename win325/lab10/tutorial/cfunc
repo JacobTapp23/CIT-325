@@ -1,0 +1,15 @@
+  , CONSTRUCTOR FUNCTION item_t
+    ( oname               VARCHAR2
+    , name                VARCHAR2
+    , ITEM_ID             NUMBER
+    , ITEM_BARCODE        VARCHAR2
+    , ITEM_TYPE           NUMBER
+    , ITEM_TITLE          VARCHAR2
+    , ITEM_SUBTITLE       VARCHAR2
+    , ITEM_RATING         VARCHAR2
+    , ITEM_RATING_AGENCY  VARCHAR2
+    , ITEM_RELEASE_DATE   DATE
+    , CREATED_BY          NUMBER
+    , CREATION_DATE       DATE
+    , LAST_UPDATED_BY     NUMBER
+    , LAST_UPDATE_DATE    DATE ) RETURN SELF AS RESULT

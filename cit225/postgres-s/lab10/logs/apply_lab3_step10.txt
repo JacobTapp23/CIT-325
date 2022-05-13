@@ -1,0 +1,5 @@
+ common_lookup_id | common_lookup_context | common_lookup_type | credit_cards 
+------------------+-----------------------+--------------------+--------------
+             1011 | MEMBER                | MASTER_CARD        |            0
+(1 row)
+

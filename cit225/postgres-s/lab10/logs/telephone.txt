@@ -1,0 +1,57 @@
+SET
+SET
+ current_setting 
+-----------------
+ telephone
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+    constraint_name     |    table_name     |   column_name   |  foreign_table_name   | foreign_column_name 
+------------------------+-------------------+-----------------+-----------------------+---------------------
+ videodb.fk_telephone_1 | videodb.telephone | contact_id      | videodb.contact       | contact_id
+ videodb.fk_telephone_2 | videodb.telephone | telephone_type  | videodb.common_lookup | common_lookup_id
+ videodb.fk_telephone_3 | videodb.telephone | created_by      | videodb.system_user   | system_user_id
+ videodb.fk_telephone_4 | videodb.telephone | last_updated_by | videodb.system_user   | system_user_id
+(4 rows)
+
+ table_name | ordinal_position |   column_name    | is_nullable |        data_type         
+------------+------------------+------------------+-------------+--------------------------
+ telephone  |                1 | telephone_id     | PRIMARY KEY | integer
+ telephone  |                2 | contact_id       | NOT NULL    | integer
+ telephone  |                3 | address_id       |             | integer
+ telephone  |                4 | telephone_type   | NOT NULL    | integer
+ telephone  |                5 | country_code     | NOT NULL    | character varying(3)
+ telephone  |                6 | area_code        | NOT NULL    | character varying(6)
+ telephone  |                7 | telephone_number | NOT NULL    | character varying(10)
+ telephone  |                8 | created_by       | NOT NULL    | integer
+ telephone  |                9 | creation_date    | NOT NULL    | timestamp with time zone
+ telephone  |               10 | last_updated_by  | NOT NULL    | integer
+ telephone  |               11 | last_update_date | NOT NULL    | timestamp with time zone
+(11 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ telephone_pkey  | primary key
+(1 row)
+
+DROP INDEX
+CREATE INDEX
+DROP INDEX
+CREATE INDEX
+ tablename |   indexname    
+-----------+----------------
+ telephone | telephone_pkey
+(1 row)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ telephone_pkey  | primary key
+(1 row)
+
+ table_name | column_name  |       sequence_name        
+------------+--------------+----------------------------
+ telephone  | telephone_id | telephone_telephone_id_seq
+(1 row)
+

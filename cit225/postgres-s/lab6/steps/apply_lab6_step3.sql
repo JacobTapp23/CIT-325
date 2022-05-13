@@ -1,0 +1,31 @@
+-- ------------------------------------------------------------------
+--  Program Name:   apply_lab6_step3.sql
+--  Lab Assignment: Lab #6
+--  Program Author: Michael McLaughlin
+--  Creation Date:  07-Nov-2019
+-- ------------------------------------------------------------------
+--  Change Log:
+-- ------------------------------------------------------------------
+--  Change Date    Change Reason
+-- -------------  ---------------------------------------------------
+--  
+-- ------------------------------------------------------------------
+--
+-- ------------------------------------------------------------------
+-- Instructions:
+-- ------------------------------------------------------------------
+-- You first connect to the Postgres database with this syntax:
+--
+--   psql -U student -d videodb -W
+--
+-- Then, you call this script with the following syntax:
+--
+--   psql> \i apply_lab6_step3.sql
+--
+-- ------------------------------------------------------------------
+
+-- ------------------------------------------------------------------
+--  Task #1: Rename the column item_release_date to release_date.
+-- -------------------------------------------------------------------
+ALTER TABLE item
+RENAME COLUMN item_release_date TO release_date;

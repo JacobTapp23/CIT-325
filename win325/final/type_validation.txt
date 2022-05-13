@@ -1,0 +1,7 @@
+
+Base             Object     Referenced   Referenced                     
+Object Name      Type       Object Name  Object Type  Status            
+---------------- ---------- ------------ ------------ --------          
+BASE_T           TYPE                                 VALID             
+DWARF_T          TYPE       BASE_T       TYPE         VALID             
+

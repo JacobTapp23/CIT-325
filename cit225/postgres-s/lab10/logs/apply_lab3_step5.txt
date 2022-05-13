@@ -1,0 +1,12 @@
+ last_name |     city     | state_province 
+-----------+--------------+----------------
+ Clinton   | Provo        | Utah
+ Gretelz   | Provo        | Utah
+ Moss      | Provo        | Utah
+ Royal     | Provo        | Utah
+ Smith     | Spanish Fork | Utah
+ Sweeney   | San Jose     | CA
+ Vizquel   | San Jose     | CA
+ Winn      | San Jose     | CA
+(8 rows)
+

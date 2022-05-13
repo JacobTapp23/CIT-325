@@ -1,0 +1,46 @@
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ item_id | common_lookup_meaning |         item_title          | item_release_date 
+---------+-----------------------+-----------------------------+-------------------
+    1001 | DVD: Wide Screen      | The Hunt for Red October    | 1990-03-02
+    1002 | DVD: Wide Screen      | Star Wars I                 | 1999-05-04
+    1003 | DVD: Full Screen      | Star Wars II                | 2002-05-16
+    1004 | DVD: Wide Screen      | Star Wars II                | 2002-05-16
+    1005 | DVD: Wide Screen      | Star Wars III               | 2005-05-19
+    1006 | DVD: Wide Screen      | The Chronicles of Narnia    | 2002-05-16
+    1007 | XBOX                  | RoboCop                     | 2003-07-24
+    1008 | XBOX                  | Pirates of the Caribbean    | 2003-06-30
+    1009 | XBOX                  | The Chronicles of Narnia    | 2003-06-30
+    1010 | Nintendo Gamecube     | MarioKart                   | 2003-11-17
+    1011 | Playstation2          | Splinter Cell               | 2003-04-08
+    1012 | Playstation2          | Need for Speed              | 2004-11-15
+    1013 | XBOX                  | The DaVinci Code            | 2006-05-19
+    1014 | XBOX                  | Cars                        | 2006-04-28
+    1015 | Blu-ray               | Beau Geste                  | 1992-03-01
+    1016 | Blu-ray               | I Remember Mama             | 1998-01-05
+    1017 | Blu-ray               | Tora! Tora! Tora!           | 1999-11-02
+    1018 | Blu-ray               | A Man for All Seasons       | 1994-06-28
+    1019 | Blu-ray               | Hook                        | 1991-12-11
+    1020 | Blu-ray               | Around the World in 80 Days | 1992-12-04
+    1021 | Blu-ray               | Camelot                     | 1998-05-15
+(21 rows)
+

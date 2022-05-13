@@ -1,0 +1,10 @@
+ last_name | account_number |     c_address      |  item_title   
+-----------+----------------+--------------------+---------------
+ Vizquel   | B293-71446     | 12 El Camino Real +| Star Wars I
+           |                | San Jose, CA 95192 | 
+ Vizquel   | B293-71446     | 12 El Camino Real +| Star Wars II
+           |                | San Jose, CA 95192 | 
+ Vizquel   | B293-71446     | 12 El Camino Real +| Star Wars III
+           |                | San Jose, CA 95192 | 
+(3 rows)
+

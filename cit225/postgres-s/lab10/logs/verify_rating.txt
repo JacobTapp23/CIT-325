@@ -1,0 +1,50 @@
+SET
+SET
+ current_setting 
+-----------------
+ rating
+(1 row)
+
+   constraint_name   |   table_name   |   column_name    |  foreign_table_name   | foreign_column_name 
+---------------------+----------------+------------------+-----------------------+---------------------
+ videodb.fk_rating_1 | videodb.rating | rating_agency_id | videodb.rating_agency | rating_agency_id
+ videodb.fk_rating_2 | videodb.rating | created_by       | videodb.system_user   | system_user_id
+ videodb.fk_rating_3 | videodb.rating | last_updated_by  | videodb.system_user   | system_user_id
+(3 rows)
+
+ table_name | ordinal_position |   column_name    | is_nullable |        data_type         
+------------+------------------+------------------+-------------+--------------------------
+ rating     |                1 | rating_id        | PRIMARY KEY | integer
+ rating     |                1 | rating_id        | PRIMARY KEY | integer
+ rating     |                2 | rating_agency_id | NOT NULL    | integer
+ rating     |                3 | rating           | NOT NULL    | character varying(10)
+ rating     |                4 | description      | NOT NULL    | character varying(420)
+ rating     |                5 | created_by       | NOT NULL    | integer
+ rating     |                6 | creation_date    | NOT NULL    | timestamp with time zone
+ rating     |                7 | last_updated_by  | NOT NULL    | integer
+ rating     |                8 | last_update_date | NOT NULL    | timestamp with time zone
+(9 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ pk_rating       | primary key
+ uq_rating       | unique
+(2 rows)
+
+ tablename | indexname 
+-----------+-----------
+ rating    | pk_rating
+ rating    | uq_rating
+(2 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ pk_rating       | primary key
+ uq_rating       | unique
+(2 rows)
+
+ table_name | column_name |    sequence_name     
+------------+-------------+----------------------
+ rating     | rating_id   | rating_rating_id_seq
+(1 row)
+

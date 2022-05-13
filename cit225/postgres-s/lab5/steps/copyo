@@ -1,0 +1,7 @@
+SELECT   su1.system_user_id
+,        su1.system_user_name
+,        su2.system_user_id AS created_by
+,        su2.system_user_name AS creator
+FROM     system_user su1 JOIN system_user su2
+ON       su1.created_by = su2.system_user_id
+WHERE    su.system_user_name = 'DBA1';

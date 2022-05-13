@@ -1,0 +1,80 @@
+-- ------------------------------------------------------------------
+--  Program Name:   verity_lab6_step1.sql
+--  Lab Assignment: Lab #6
+--  Program Author: Michael McLaughlin
+--  Creation Date:  05-Nov-2019
+-- ------------------------------------------------------------------
+--  Change Log:
+-- ------------------------------------------------------------------
+--  Change Date    Change Reason
+-- -------------  ---------------------------------------------------
+--  
+-- ------------------------------------------------------------------
+--
+-- ------------------------------------------------------------------
+-- Instructions:
+-- ------------------------------------------------------------------
+-- You first connect to the Postgres database with this syntax:
+--
+--   psql -U student -d videodb -W
+--
+-- Then, you call this script with the following syntax:
+--
+--   psql> \i apply_postgres_lab6.sql
+--
+-- ------------------------------------------------------------------
+
+-- ------------------------------------------------------------------
+--  Cleanup prior installations and run previous lab scripts.
+-- ------------------------------------------------------------------
+
+-- Set session variable.
+SET SESSION "videodb.table_name" = 'rental_item';
+
+--  Verify table name.
+SELECT current_setting('videodb.table_name');
+
+-- Query label.
+SELECT 'Lab 6: Step 1: Task 1 & 2' AS "Task Identifier";
+
+-- Query the columns from the table.
+SELECT c1.table_name
+,      c1.ordinal_position
+,      c1.column_name
+,      CASE
+         WHEN c1.is_nullable = 'NO' AND c2.column_name IS NOT NULL THEN 'PRIMARY KEY'
+         WHEN c1.is_nullable = 'NO' AND c2.column_name IS NULL THEN 'NOT NULL'
+       END AS is_nullable
+,      CASE
+         WHEN data_type = 'character varying' THEN
+           data_type||'('||character_maximum_length||')'
+         WHEN data_type = 'numeric' THEN
+           CASE
+             WHEN numeric_scale != 0 AND numeric_scale IS NOT NULL THEN
+               data_type||'('||numeric_precision||','||numeric_scale||')'
+             ELSE
+               data_type||'('||numeric_precision||')'
+             END
+         ELSE
+           data_type
+        END AS data_type
+FROM    information_schema.columns c1 LEFT JOIN
+          (SELECT trim(regexp_matches(column_default,current_setting('videodb.table_name'))::text,'{}')||'_id' column_name
+           FROM   information_schema.columns) c2
+ON       c1.column_name = c2.column_name
+WHERE    c1.table_name = current_setting('videodb.table_name')
+ORDER BY c1.ordinal_position;
+
+-- Query label.
+SELECT 'Lab 6: Step 1: Task 3' AS "Task Identifier";
+
+-- Query the foreign key columns from rental_item table.
+SELECT   conrelid::regclass::text AS table_from
+,        conname AS foreign_key
+,        pg_get_constraintdef(oid)
+FROM     pg_constraint
+WHERE    contype = 'f'
+AND      connamespace = 'public'::regnamespace 
+AND      conrelid::regclass::text = 'rental_item'
+ORDER BY conrelid::regclass::text
+,        conname;

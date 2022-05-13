@@ -1,0 +1,47 @@
+SET
+SET
+ current_setting 
+-----------------
+ rating_agency
+(1 row)
+
+      constraint_name       |      table_name       |   column_name   | foreign_table_name  | foreign_column_name 
+----------------------------+-----------------------+-----------------+---------------------+---------------------
+ videodb.fk_rating_agency_1 | videodb.rating_agency | created_by      | videodb.system_user | system_user_id
+ videodb.fk_rating_agency_2 | videodb.rating_agency | last_updated_by | videodb.system_user | system_user_id
+(2 rows)
+
+  table_name   | ordinal_position |    column_name     | is_nullable |        data_type         
+---------------+------------------+--------------------+-------------+--------------------------
+ rating_agency |                1 | rating_agency_id   | PRIMARY KEY | integer
+ rating_agency |                2 | rating_agency_abbr | NOT NULL    | character varying(8)
+ rating_agency |                3 | rating_agency_name | NOT NULL    | character varying(40)
+ rating_agency |                4 | created_by         | NOT NULL    | integer
+ rating_agency |                5 | creation_date      | NOT NULL    | timestamp with time zone
+ rating_agency |                6 | last_updated_by    | NOT NULL    | integer
+ rating_agency |                7 | last_update_date   | NOT NULL    | timestamp with time zone
+(7 rows)
+
+ constraint_name  | constraint_type 
+------------------+-----------------
+ pk_rating_agency | primary key
+ uq_rating_agency | unique
+(2 rows)
+
+   tablename   |    indexname     
+---------------+------------------
+ rating_agency | pk_rating_agency
+ rating_agency | uq_rating_agency
+(2 rows)
+
+ constraint_name  | constraint_type 
+------------------+-----------------
+ pk_rating_agency | primary key
+ uq_rating_agency | unique
+(2 rows)
+
+  table_name   |   column_name    |           sequence_name            
+---------------+------------------+------------------------------------
+ rating_agency | rating_agency_id | rating_agency_rating_agency_id_seq
+(1 row)
+

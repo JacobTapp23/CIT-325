@@ -1,0 +1,19 @@
+
+Type dropped.
+
+
+Type dropped.
+
+
+Type created.
+
+
+Type created.
+
+DECLARE
+*
+ERROR at line 1:
+ORA-00001: unique constraint (C##STUDENT.COMMON_LOOKUP_U2) violated 
+ORA-06512: at line 26 
+
+

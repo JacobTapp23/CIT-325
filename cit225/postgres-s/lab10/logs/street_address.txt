@@ -1,0 +1,52 @@
+SET
+SET
+ current_setting 
+-----------------
+ street_address
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+    constraint_name     |       table_name       |   column_name   | foreign_table_name  | foreign_column_name 
+------------------------+------------------------+-----------------+---------------------+---------------------
+ videodb.fk_s_address_1 | videodb.street_address | address_id      | videodb.address     | address_id
+ videodb.fk_s_address_3 | videodb.street_address | created_by      | videodb.system_user | system_user_id
+ videodb.fk_s_address_4 | videodb.street_address | last_updated_by | videodb.system_user | system_user_id
+(3 rows)
+
+   table_name   | ordinal_position |    column_name    | is_nullable |        data_type         
+----------------+------------------+-------------------+-------------+--------------------------
+ street_address |                1 | street_address_id | PRIMARY KEY | integer
+ street_address |                2 | address_id        | NOT NULL    | integer
+ street_address |                3 | street_address    | NOT NULL    | character varying(30)
+ street_address |                4 | created_by        | NOT NULL    | integer
+ street_address |                5 | creation_date     | NOT NULL    | timestamp with time zone
+ street_address |                6 | last_updated_by   | NOT NULL    | integer
+ street_address |                7 | last_update_date  | NOT NULL    | timestamp with time zone
+(7 rows)
+
+   constraint_name   | constraint_type 
+---------------------+-----------------
+ street_address_pkey | primary key
+(1 row)
+
+DROP INDEX
+CREATE INDEX
+DROP INDEX
+CREATE INDEX
+   tablename    |      indexname      
+----------------+---------------------
+ street_address | street_address_pkey
+(1 row)
+
+   constraint_name   | constraint_type 
+---------------------+-----------------
+ street_address_pkey | primary key
+(1 row)
+
+   table_name   |    column_name    |            sequence_name             
+----------------+-------------------+--------------------------------------
+ street_address | street_address_id | street_address_street_address_id_seq
+(1 row)
+

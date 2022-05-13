@@ -1,0 +1,16 @@
+ first_name | middle_name | last_name 
+------------+-------------+-----------
+ Randi      |             | Winn
+ Brian      |             | Winn
+ Oscar      |             | Vizquel
+ Doreen     |             | Vizquel
+ Meaghan    |             | Sweeney
+ Matthew    |             | Sweeney
+ Ian        | M           | Sweeney
+ Goeffrey   | Ward        | Clinton
+ Wendy      |             | Moss
+ Simon      | Jonah       | Gretelz
+ Elizabeth  | Jane        | Royal
+ Brian      | Nathan      | Smith
+(12 rows)
+

@@ -1,0 +1,26 @@
+Log: apply_plsql_lab2-2.txt
+==========================================
+Test Case: String less than 11 characters
+------------------------------------------
+old 5: input := '&1';
+new 5: input := 'Harry';
+
+PL/SQL procedure successfully completed.
+
+==========================================
+Test Case: String more than 10 characters
+------------------------------------------
+old 5: input := '&1';
+new 5: input := 'Rumpelstilskin';
+
+PL/SQL procedure successfully completed.
+
+==========================================
+Test Case: Empty string
+------------------------------------------
+old 5: input := '&1';
+new 5: input := '';
+
+PL/SQL procedure successfully completed.
+
+==========================================

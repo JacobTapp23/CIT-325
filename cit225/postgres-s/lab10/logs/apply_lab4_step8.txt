@@ -1,0 +1,14 @@
+ last_name | account_number |     c_address      |   telephone    
+-----------+----------------+--------------------+----------------
+ Vizquel   | B293-71446     | 12 El Camino Real +| (408) 222-2222
+           |                | San Jose, CA 95192 | 
+ Vizquel   | B293-71446     | 12 El Camino Real +| (408) 222-2222
+           |                | San Jose, CA 95192 | 
+ Sweeney   | B293-71447     | 14 El Camino Real +| (408) 333-3333
+           |                | San Jose, CA 95192 | 
+ Sweeney   | B293-71447     | 14 El Camino Real +| (408) 333-3333
+           |                | San Jose, CA 95192 | 
+ Winn      | B293-71445     | 10 El Camino Real +| (408) 111-1111
+           |                | San Jose, CA 95192 | 
+(5 rows)
+

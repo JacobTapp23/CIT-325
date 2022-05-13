@@ -1,0 +1,10 @@
+SET
+SET
+ current_setting 
+-----------------
+ price
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE

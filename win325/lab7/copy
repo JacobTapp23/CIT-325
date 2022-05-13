@@ -1,0 +1,26 @@
+  /* Declare a local variable for an existing grandma_id. */
+  lv_grandma_id   NUMBER;
+ 
+  FUNCTION get_grandma_id
+  ( pv_grandma_house  VARCHAR2 ) RETURN NUMBER IS
+ 
+    /* Local return variable. */
+    lv_retval  NUMBER := 0;  -- Default value is 0.
+ 
+    /* Use a cursor, which will not raise an exception at runtime. */
+    CURSOR find_grandma_id
+    ( cv_grandma_house  VARCHAR2 ) IS
+      SELECT grandma_id
+      FROM   grandma
+      WHERE  grandma_house = cv_grandma_house;
+ 
+  BEGIN  
+ 
+    /* Assign a value when a row exists. */
+    FOR i IN find_grandma_id(pv_grandma_house) LOOP
+      lv_retval := i.grandma_id;
+    END LOOP;
+ 
+    /* Return 0 when no row found and the ID # when row found. */
+    RETURN lv_retval;
+  END get_grandma_id;

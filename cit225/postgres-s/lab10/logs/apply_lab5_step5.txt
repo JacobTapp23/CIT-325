@@ -1,0 +1,10 @@
+ system_user_id | system_user_name | created_by | creator  | updated_by | updator  
+----------------+------------------+------------+----------+------------+----------
+              1 | SYSADMIN         |          1 | SYSADMIN |          1 | SYSADMIN
+           1001 | DBA1             |          1 | SYSADMIN |          1 | SYSADMIN
+           1002 | DBA2             |          1 | SYSADMIN |          1 | SYSADMIN
+           1003 | DBA3             |          1 | SYSADMIN |          1 | SYSADMIN
+           1004 | DBA4             |          1 | SYSADMIN |          1 | SYSADMIN
+           1005 | DBA5             |          1 | SYSADMIN |          1 | SYSADMIN
+(6 rows)
+

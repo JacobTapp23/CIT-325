@@ -1,0 +1,58 @@
+SET
+SET
+ current_setting 
+-----------------
+ contact
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+   constraint_name    |   table_name    |   column_name   |  foreign_table_name   | foreign_column_name 
+----------------------+-----------------+-----------------+-----------------------+---------------------
+ videodb.fk_contact_1 | videodb.contact | member_id       | videodb.member        | member_id
+ videodb.fk_contact_2 | videodb.contact | contact_type    | videodb.common_lookup | common_lookup_id
+ videodb.fk_contact_3 | videodb.contact | created_by      | videodb.system_user   | system_user_id
+ videodb.fk_contact_4 | videodb.contact | last_updated_by | videodb.system_user   | system_user_id
+(4 rows)
+
+ table_name | ordinal_position |   column_name    | is_nullable |        data_type         
+------------+------------------+------------------+-------------+--------------------------
+ contact    |                1 | contact_id       | PRIMARY KEY | integer
+ contact    |                2 | member_id        | NOT NULL    | integer
+ contact    |                3 | contact_type     | NOT NULL    | integer
+ contact    |                4 | first_name       | NOT NULL    | character varying(20)
+ contact    |                5 | middle_name      |             | character varying(20)
+ contact    |                6 | last_name        | NOT NULL    | character varying(20)
+ contact    |                7 | created_by       | NOT NULL    | integer
+ contact    |                8 | creation_date    | NOT NULL    | timestamp with time zone
+ contact    |                9 | last_updated_by  | NOT NULL    | integer
+ contact    |               10 | last_update_date | NOT NULL    | timestamp with time zone
+(10 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ contact_pkey    | primary key
+(1 row)
+
+DROP INDEX
+CREATE INDEX
+DROP INDEX
+CREATE INDEX
+ tablename |   indexname   
+-----------+---------------
+ contact   | contact_pkey
+ contact   | nq_contact_n1
+ contact   | nq_contact_n2
+(3 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ contact_pkey    | primary key
+(1 row)
+
+ table_name | column_name |     sequence_name      
+------------+-------------+------------------------
+ contact    | contact_id  | contact_contact_id_seq
+(1 row)
+

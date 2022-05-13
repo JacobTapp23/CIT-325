@@ -1,0 +1,1 @@
+,        a.city || ', ' || a.state_province || ' ' || a.postal_code

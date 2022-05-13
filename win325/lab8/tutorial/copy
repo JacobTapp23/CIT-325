@@ -1,0 +1,21 @@
+  ( pv_member_type         VARCHAR2
+  , pv_account_number      VARCHAR2
+  , pv_credit_card_number  VARCHAR2
+  , pv_credit_card_type    VARCHAR2
+  , pv_first_name          VARCHAR2
+  , pv_middle_name         VARCHAR2 := ''
+  , pv_last_name           VARCHAR2
+  , pv_contact_type        VARCHAR2
+  , pv_address_type        VARCHAR2
+  , pv_city                VARCHAR2
+  , pv_state_province      VARCHAR2
+  , pv_postal_code         VARCHAR2
+  , pv_street_address      VARCHAR2
+  , pv_telephone_type      VARCHAR2
+  , pv_country_code        VARCHAR2
+  , pv_area_code           VARCHAR2
+  , pv_telephone_number    VARCHAR2
+  , pv_created_by          NUMBER   := 1
+  , pv_creation_date       DATE     := SYSDATE
+  , pv_last_updated_by     NUMBER   := 1
+  , pv_last_update_date    DATE     := SYSDATE) RETURN NUMBER;

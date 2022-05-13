@@ -1,0 +1,94 @@
+
+Package created.
+
+  1  CREATE OR REPLACE PACKAGE contact_package IS
+  2    PROCEDURE insert_contact
+  3     ( PV_FIRST_NAME           VARCHAR2
+  4     , PV_MIDDLE_NAME          VARCHAR2
+  5     , PV_LAST_NAME            VARCHAR2
+  6     , PV_CONTACT_TYPE         VARCHAR2
+  7     , PV_ACCOUNT_NUMBER       VARCHAR2
+  8     , PV_MEMBER_TYPE          VARCHAR2
+  9     , PV_CREDIT_CARD_NUMBER   VARCHAR2
+ 10     , PV_CREDIT_CARD_TYPE     VARCHAR2
+ 11     , PV_CITY                 VARCHAR2
+ 12     , PV_STATE_PROVINCE       VARCHAR2
+ 13     , PV_POSTAL_CODE          VARCHAR2
+ 14     , PV_ADDRESS_TYPE         VARCHAR2
+ 15     , PV_COUNTRY_CODE         VARCHAR2
+ 16     , PV_AREA_CODE            VARCHAR2
+ 17     , PV_TELEPHONE_NUMBER     VARCHAR2
+ 18     , PV_TELEPHONE_TYPE       VARCHAR2
+ 19     , PV_USER_NAME            VARCHAR2 );
+ 20    PROCEDURE insert_contact
+ 21     ( PV_FIRST_NAME           VARCHAR2
+ 22     , PV_MIDDLE_NAME          VARCHAR2
+ 23     , PV_LAST_NAME            VARCHAR2
+ 24     , PV_CONTACT_TYPE         VARCHAR2
+ 25     , PV_ACCOUNT_NUMBER       VARCHAR2
+ 26     , PV_MEMBER_TYPE          VARCHAR2
+ 27     , PV_CREDIT_CARD_NUMBER   VARCHAR2
+ 28     , PV_CREDIT_CARD_TYPE     VARCHAR2
+ 29     , PV_CITY                 VARCHAR2
+ 30     , PV_STATE_PROVINCE       VARCHAR2
+ 31     , PV_POSTAL_CODE          VARCHAR2
+ 32     , PV_ADDRESS_TYPE         VARCHAR2
+ 33     , PV_COUNTRY_CODE         VARCHAR2
+ 34     , PV_AREA_CODE            VARCHAR2
+ 35     , PV_TELEPHONE_NUMBER     VARCHAR2
+ 36     , PV_TELEPHONE_TYPE       VARCHAR2
+ 37     , PV_USER_ID              NUMBER );
+ 38* END contact_package;
+No errors.
+
+Package body created.
+
+  1  CREATE OR REPLACE PACKAGE BODY contact_package IS
+  2    PROCEDURE insert_contact
+  3     ( PV_FIRST_NAME           VARCHAR2
+  4     , PV_MIDDLE_NAME          VARCHAR2
+  5     , PV_LAST_NAME            VARCHAR2
+  6     , PV_CONTACT_TYPE         VARCHAR2
+  7     , PV_ACCOUNT_NUMBER       VARCHAR2
+  8     , PV_MEMBER_TYPE          VARCHAR2
+  9     , PV_CREDIT_CARD_NUMBER   VARCHAR2
+ 10     , PV_CREDIT_CARD_TYPE     VARCHAR2
+ 11     , PV_CITY                 VARCHAR2
+ 12     , PV_STATE_PROVINCE       VARCHAR2
+ 13     , PV_POSTAL_CODE          VARCHAR2
+ 14     , PV_ADDRESS_TYPE         VARCHAR2
+ 15     , PV_COUNTRY_CODE         VARCHAR2
+ 16     , PV_AREA_CODE            VARCHAR2
+ 17     , PV_TELEPHONE_NUMBER     VARCHAR2
+ 18     , PV_TELEPHONE_TYPE       VARCHAR2
+ 19     , PV_USER_NAME            VARCHAR2 ) IS
+ 20  
+ 21    BEGIN
+ 22      NULL; -- Logic of Program.
+ 23    END insert_contact;
+ 24  
+ 25    PROCEDURE insert_contact
+ 26     ( PV_FIRST_NAME           VARCHAR2
+ 27     , PV_MIDDLE_NAME          VARCHAR2
+ 28     , PV_LAST_NAME            VARCHAR2
+ 29     , PV_CONTACT_TYPE         VARCHAR2
+ 30     , PV_ACCOUNT_NUMBER       VARCHAR2
+ 31     , PV_MEMBER_TYPE          VARCHAR2
+ 32     , PV_CREDIT_CARD_NUMBER   VARCHAR2
+ 33     , PV_CREDIT_CARD_TYPE     VARCHAR2
+ 34     , PV_CITY                 VARCHAR2
+ 35     , PV_STATE_PROVINCE       VARCHAR2
+ 36     , PV_POSTAL_CODE          VARCHAR2
+ 37     , PV_ADDRESS_TYPE         VARCHAR2
+ 38     , PV_COUNTRY_CODE         VARCHAR2
+ 39     , PV_AREA_CODE            VARCHAR2
+ 40     , PV_TELEPHONE_NUMBER     VARCHAR2
+ 41     , PV_TELEPHONE_TYPE       VARCHAR2
+ 42     , PV_USER_ID              NUMBER ) IS
+ 43  
+ 44    BEGIN
+ 45      NULL; -- Logic of Program.
+ 46    END insert_contact;
+ 47* END contact_package;
+No errors.
+SQL> quit;

@@ -1,0 +1,44 @@
+  constraint_name   |  table_name   |   column_name   | foreign_table_name  | foreign_column_name 
+--------------------+---------------+-----------------+---------------------+---------------------
+ videodb.fk_price_1 | videodb.price | created_by      | videodb.system_user | system_user_id
+ videodb.fk_price_2 | videodb.price | last_updated_by | videodb.system_user | system_user_id
+(2 rows)
+
+ table_name | ordinal_position |   column_name    | is_nullable |        data_type         
+------------+------------------+------------------+-------------+--------------------------
+ price      |                1 | price_id         | PRIMARY KEY | integer
+ price      |                2 | item_id          |             | integer
+ price      |                3 | price_type       |             | integer
+ price      |                4 | active_flag      |             | character varying(1)
+ price      |                5 | start_date       |             | date
+ price      |                6 | end_date         |             | date
+ price      |                7 | amount           |             | numeric(5,2)
+ price      |                8 | created_by       | NOT NULL    | integer
+ price      |                9 | creation_date    | NOT NULL    | timestamp with time zone
+ price      |               10 | last_updated_by  | NOT NULL    | integer
+ price      |               11 | last_update_date | NOT NULL    | timestamp with time zone
+(11 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ price_pkey      | primary key
+(1 row)
+
+DROP INDEX
+CREATE INDEX
+ tablename |  indexname  
+-----------+-------------
+ price     | price_pkey
+ price     | uq_price_u1
+(2 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ price_pkey      | primary key
+(1 row)
+
+ table_name | column_name |   sequence_name    
+------------+-------------+--------------------
+ price      | price_id    | price_price_id_seq
+(1 row)
+

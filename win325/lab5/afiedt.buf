@@ -1,0 +1,6 @@
+select ra.rating_agency_id
+,      ra.rating
+,      i.item_rating
+from   rating_agency ra join item i
+on     rating = item_rating
+/

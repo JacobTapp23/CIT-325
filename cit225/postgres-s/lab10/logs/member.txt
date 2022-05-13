@@ -1,0 +1,54 @@
+SET
+SET
+ current_setting 
+-----------------
+ member
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+   constraint_name   |   table_name   |   column_name    |  foreign_table_name   | foreign_column_name 
+---------------------+----------------+------------------+-----------------------+---------------------
+ videodb.fk_member_1 | videodb.member | member_type      | videodb.common_lookup | common_lookup_id
+ videodb.fk_member_2 | videodb.member | credit_card_type | videodb.common_lookup | common_lookup_id
+ videodb.fk_member_3 | videodb.member | created_by       | videodb.system_user   | system_user_id
+ videodb.fk_member_4 | videodb.member | last_updated_by  | videodb.system_user   | system_user_id
+(4 rows)
+
+ table_name | ordinal_position |    column_name     | is_nullable |        data_type         
+------------+------------------+--------------------+-------------+--------------------------
+ member     |                1 | member_id          | PRIMARY KEY | integer
+ member     |                2 | member_type        |             | integer
+ member     |                3 | account_number     | NOT NULL    | character varying(10)
+ member     |                4 | credit_card_number | NOT NULL    | character varying(19)
+ member     |                5 | credit_card_type   | NOT NULL    | integer
+ member     |                6 | created_by         | NOT NULL    | integer
+ member     |                7 | creation_date      | NOT NULL    | timestamp with time zone
+ member     |                8 | last_updated_by    | NOT NULL    | integer
+ member     |                9 | last_update_date   | NOT NULL    | timestamp with time zone
+(9 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ member_pkey     | primary key
+(1 row)
+
+DROP INDEX
+CREATE INDEX
+ tablename |  indexname   
+-----------+--------------
+ member    | member_pkey
+ member    | nq_member_n1
+(2 rows)
+
+ constraint_name | constraint_type 
+-----------------+-----------------
+ member_pkey     | primary key
+(1 row)
+
+ table_name | column_name |    sequence_name     
+------------+-------------+----------------------
+ member     | member_id   | member_member_id_seq
+(1 row)
+

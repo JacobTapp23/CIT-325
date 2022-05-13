@@ -1,0 +1,11 @@
+declare
+  abnormal varchar2(1);
+begin
+  abnormal := 'AB';
+  null;
+exception
+  WHEN others THEN
+    dbms_output.put_line('Got you');
+    dbms_output.put_line(SQLERRM);
+end;
+/

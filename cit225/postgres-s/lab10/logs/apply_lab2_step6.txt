@@ -1,0 +1,11 @@
+        item_title        | item_rating | item_release_date 
+--------------------------+-------------+-------------------
+ The Hunt for Red October | PG          | 1990-03-02
+ Star Wars I              | PG          | 1999-05-04
+ Star Wars II             | PG          | 2002-05-16
+ Star Wars II             | PG          | 2002-05-16
+ The Chronicles of Narnia | PG          | 2002-05-16
+ Beau Geste               | PG          | 1992-03-01
+ Hook                     | PG          | 1991-12-11
+(7 rows)
+

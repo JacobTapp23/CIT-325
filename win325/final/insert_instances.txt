@@ -1,0 +1,6 @@
+, hobbit_t( oid   => tolkien_s.CURRVAL
+  *
+ERROR at line 6:
+ORA-00904: "HOBBIT_T": invalid identifier 
+
+

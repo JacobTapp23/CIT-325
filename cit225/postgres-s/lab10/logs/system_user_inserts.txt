@@ -1,0 +1,71 @@
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ system_user_id | system_user_group_id | system_user_type | system_user_name |     full_user_name     
+----------------+----------------------+------------------+------------------+------------------------
+              1 |                 1001 |             1003 | SYSADMIN         | 
+           1001 |                 1002 |             1003 | DBA1             | Barnum, Phineas Taylor
+           1002 |                 1002 |             1003 | DBA2             | Fogg, Phileas
+           1003 |                 1002 |             1003 | DBA3             | Adams, Samuel
+           1004 |                 1002 |             1003 | DBA4             | Henry, Patrick
+           1005 |                 1002 |             1003 | DBA5             | Manmohan, Puri
+(6 rows)
+
+ member_id | account_number |    full_name     |   city   | state_province |     telephone      
+-----------+----------------+------------------+----------+----------------+--------------------
+      1001 | B293-71445     | Winn, Randi      | San Jose | CA             | 001-(408) 111-1111
+      1001 | B293-71445     | Winn, Brian      | San Jose | CA             | 001-(408) 111-1111
+      1002 | B293-71446     | Vizquel, Oscar   | San Jose | CA             | USA-(408) 222-2222
+      1002 | B293-71446     | Vizquel, Doreen  | San Jose | CA             | USA-(408) 222-2222
+      1003 | B293-71447     | Sweeney, Meaghan | San Jose | CA             | USA-(408) 333-3333
+      1003 | B293-71447     | Sweeney, Matthew | San Jose | CA             | USA-(408) 333-3333
+      1003 | B293-71447     | Sweeney, Ian M   | San Jose | CA             | USA-(408) 333-3333
+(7 rows)
+
+ item_id | common_lookup_meaning |         item_title          | item_release_date 
+---------+-----------------------+-----------------------------+-------------------
+    1001 | DVD: Wide Screen      | The Hunt for Red October    | 1990-03-02
+    1002 | DVD: Wide Screen      | Star Wars I                 | 1999-05-04
+    1003 | DVD: Full Screen      | Star Wars II                | 2002-05-16
+    1004 | DVD: Wide Screen      | Star Wars II                | 2002-05-16
+    1005 | DVD: Wide Screen      | Star Wars III               | 2005-05-19
+    1006 | DVD: Wide Screen      | The Chronicles of Narnia    | 2002-05-16
+    1007 | XBOX                  | RoboCop                     | 2003-07-24
+    1008 | XBOX                  | Pirates of the Caribbean    | 2003-06-30
+    1009 | XBOX                  | The Chronicles of Narnia    | 2003-06-30
+    1010 | Nintendo Gamecube     | MarioKart                   | 2003-11-17
+    1011 | Playstation2          | Splinter Cell               | 2003-04-08
+    1012 | Playstation2          | Need for Speed              | 2004-11-15
+    1013 | XBOX                  | The DaVinci Code            | 2006-05-19
+    1014 | XBOX                  | Cars                        | 2006-04-28
+    1015 | Blu-ray               | Beau Geste                  | 1992-03-01
+    1016 | Blu-ray               | I Remember Mama             | 1998-01-05
+    1017 | Blu-ray               | Tora! Tora! Tora!           | 1999-11-02
+    1018 | Blu-ray               | A Man for All Seasons       | 1994-06-28
+    1019 | Blu-ray               | Hook                        | 1991-12-11
+    1020 | Blu-ray               | Around the World in 80 Days | 1992-12-04
+    1021 | Blu-ray               | Camelot                     | 1998-05-15
+(21 rows)
+
+ account_number |      full_name      |     city     | state_province |     telephone      
+----------------+---------------------+--------------+----------------+--------------------
+ R11-514-34     | Clinton, Goeffrey W | Provo        | Utah           | 001-(801) 423-1234
+ R11-514-35     | Moss, Wendy         | Provo        | Utah           | 001-(801) 423-1235
+ R11-514-36     | Gretelz, Simon J    | Provo        | Utah           | 001-(801) 423-1236
+ R11-514-37     | Royal, Elizabeth J  | Provo        | Utah           | 001-(801) 423-1237
+ R11-514-38     | Smith, Brian N      | Spanish Fork | Utah           | 001-(801) 423-1238
+(5 rows)
+
+ member_id | account_number |    full_name     | rental_id | rental_item_id |        item_title        
+-----------+----------------+------------------+-----------+----------------+--------------------------
+      1002 | B293-71446     | Vizquel, Oscar   |      1001 |           1001 | Star Wars I
+      1002 | B293-71446     | Vizquel, Oscar   |      1001 |           1002 | Star Wars II
+      1002 | B293-71446     | Vizquel, Oscar   |      1001 |           1003 | Star Wars III
+      1002 | B293-71446     | Vizquel, Doreen  |      1002 |           1004 | I Remember Mama
+      1002 | B293-71446     | Vizquel, Doreen  |      1002 |           1005 | Camelot
+      1003 | B293-71447     | Sweeney, Meaghan |      1003 |           1006 | Hook
+      1003 | B293-71447     | Sweeney, Ian M   |      1004 |           1007 | Cars
+      1001 | B293-71445     | Winn, Brian      |      1005 |           1008 | RoboCop
+      1001 | B293-71445     | Winn, Brian      |      1005 |           1009 | The Hunt for Red October
+(9 rows)
+

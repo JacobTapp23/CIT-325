@@ -1,0 +1,20 @@
+ currval 
+---------
+    1001
+(1 row)
+
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ account_number | full_name |   city   | state_province |     telephone      
+----------------+-----------+----------+----------------+--------------------
+ B293-71446     |           | San Jose | CA             | USA-(408) 222-2222
+ B293-71446     |           | San Jose | CA             | USA-(408) 222-2222
+(2 rows)
+

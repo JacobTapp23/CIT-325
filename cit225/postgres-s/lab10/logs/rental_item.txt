@@ -1,0 +1,64 @@
+SET
+SET
+ current_setting 
+-----------------
+ rental_item
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+     constraint_name      |     table_name      |   column_name   | foreign_table_name  | foreign_column_name 
+--------------------------+---------------------+-----------------+---------------------+---------------------
+ videodb.fk_rental_item_1 | videodb.rental_item | rental_id       | videodb.rental      | rental_id
+ videodb.fk_rental_item_2 | videodb.rental_item | item_id         | videodb.item        | item_id
+ videodb.fk_rental_item_3 | videodb.rental_item | created_by      | videodb.system_user | system_user_id
+ videodb.fk_rental_item_4 | videodb.rental_item | last_updated_by | videodb.system_user | system_user_id
+(4 rows)
+
+ table_name  | ordinal_position |   column_name    | is_nullable |        data_type         
+-------------+------------------+------------------+-------------+--------------------------
+ rental_item |                1 | rental_item_id   | PRIMARY KEY | integer
+ rental_item |                2 | rental_id        | NOT NULL    | integer
+ rental_item |                3 | item_id          | NOT NULL    | integer
+ rental_item |                4 | created_by       | NOT NULL    | integer
+ rental_item |                5 | creation_date    | NOT NULL    | timestamp with time zone
+ rental_item |                6 | last_updated_by  | NOT NULL    | integer
+ rental_item |                7 | last_update_date | NOT NULL    | timestamp with time zone
+(7 rows)
+
+ constraint_name  | constraint_type 
+------------------+-----------------
+ pk_rental_item_1 | primary key
+(1 row)
+
+  tablename  |    indexname     
+-------------+------------------
+ rental_item | pk_rental_item_1
+(1 row)
+
+ constraint_name  | constraint_type 
+------------------+-----------------
+ pk_rental_item_1 | primary key
+(1 row)
+
+ table_name  |  column_name   |         sequence_name          
+-------------+----------------+--------------------------------
+ rental_item | rental_item_id | rental_item_rental_item_id_seq
+(1 row)
+
+ table_catalog |   table_name   |            sequence_name             
+---------------+----------------+--------------------------------------
+ videodb       | system_user    | system_user_system_user_id_seq
+ videodb       | common_lookup  | common_lookup_common_lookup_id_seq
+ videodb       | member         | member_member_id_seq
+ videodb       | contact        | contact_contact_id_seq
+ videodb       | address        | address_address_id_seq
+ videodb       | street_address | street_address_street_address_id_seq
+ videodb       | telephone      | telephone_telephone_id_seq
+ videodb       | item           | item_item_id_seq
+ videodb       | rental         | rental_rental_id_seq
+ videodb       | rental         | rental_item_rental_item_id_seq
+ videodb       | rental_item    | rental_item_rental_item_id_seq
+(11 rows)
+

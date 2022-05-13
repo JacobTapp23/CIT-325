@@ -1,0 +1,42 @@
+SET
+SET
+ current_setting 
+-----------------
+ system_user
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+     constraint_name      |     table_name      |   column_name   | foreign_table_name  | foreign_column_name 
+--------------------------+---------------------+-----------------+---------------------+---------------------
+ videodb.fk_system_user_1 | videodb.system_user | created_by      | videodb.system_user | system_user_id
+ videodb.fk_system_user_2 | videodb.system_user | last_updated_by | videodb.system_user | system_user_id
+(2 rows)
+
+ table_name  | ordinal_position |     column_name      | is_nullable |        data_type         
+-------------+------------------+----------------------+-------------+--------------------------
+ system_user |                1 | system_user_id       | PRIMARY KEY | integer
+ system_user |                2 | system_user_name     | NOT NULL    | character varying(20)
+ system_user |                3 | system_user_group_id | NOT NULL    | integer
+ system_user |                4 | system_user_type     | NOT NULL    | integer
+ system_user |                5 | first_name           |             | character varying(20)
+ system_user |                6 | middle_name          |             | character varying(20)
+ system_user |                7 | last_name            |             | character varying(20)
+ system_user |                8 | created_by           | NOT NULL    | integer
+ system_user |                9 | creation_date        | NOT NULL    | timestamp with time zone
+ system_user |               10 | last_updated_by      | NOT NULL    | integer
+ system_user |               11 | last_update_date     | NOT NULL    | timestamp with time zone
+(11 rows)
+
+CREATE INDEX
+ constraint_name  | constraint_type 
+------------------+-----------------
+ system_user_pkey | primary key
+(1 row)
+
+ table_name  |  column_name   |         sequence_name          
+-------------+----------------+--------------------------------
+ system_user | system_user_id | system_user_system_user_id_seq
+(1 row)
+

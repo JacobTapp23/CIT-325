@@ -1,0 +1,59 @@
+        Task Identifier        
+-------------------------------
+ Lab 6: Step 7: Task 1, 2, & 3
+(1 row)
+
+ common_lookup_table | common_lookup_column | common_lookup_type 
+---------------------+----------------------+--------------------
+ ADDRESS             | ADDRESS_TYPE         | WORK
+ ADDRESS             | ADDRESS_TYPE         | HOME
+ CONTACT             | CONTACT_TYPE         | EMPLOYEE
+ CONTACT             | CONTACT_TYPE         | CUSTOMER
+ ITEM                | ITEM_TYPE            | BLU-RAY
+ ITEM                | ITEM_TYPE            | DVD_WIDE_SCREEN
+ ITEM                | ITEM_TYPE            | NINTENDO_GAMECUBE
+ ITEM                | ITEM_TYPE            | PLAYSTATION2
+ ITEM                | ITEM_TYPE            | XBOX
+ ITEM                | ITEM_TYPE            | DVD_FULL_SCREEN
+ MEMBER              | MEMBER_TYPE          | MASTER_CARD
+ MEMBER              | MEMBER_TYPE          | VISA_CARD
+ MEMBER              | MEMBER_TYPE          | GROUP
+ MEMBER              | MEMBER_TYPE          | INDIVIDUAL
+ MEMBER              | MEMBER_TYPE          | DISCOVER_CARD
+ SYSTEM_USER         | SYSTEM_USER_TYPE     | SYSTEM_ADMIN
+ SYSTEM_USER         | SYSTEM_USER_TYPE     | DBA
+ SYSTEM_USER         | SYSTEM_USER_TYPE     | SYSTEM_GROUP
+ SYSTEM_USER         | SYSTEM_USER_TYPE     | COST_CENTER
+ SYSTEM_USER         | SYSTEM_USER_TYPE     | INDIVIDUAL
+ TELEPHONE           | TELEPHONE_TYPE       | HOME
+ TELEPHONE           | TELEPHONE_TYPE       | WORK
+(22 rows)
+
+ table_name |  column_name   | value_type | matches 
+------------+----------------+------------+---------
+ ADDRESS    | ADDRESS_TYPE   | HOME       |      15
+ ADDRESS    | ADDRESS_TYPE   | WORK       |       0
+ TELEPHONE  | TELEPHONE_TYPE | HOME       |      15
+ TELEPHONE  | TELEPHONE_TYPE | WORK       |       0
+(4 rows)
+
+SET
+ current_setting 
+-----------------
+ common_lookup
+(1 row)
+
+  table_name   | ordinal_position |      column_name      | is_nullable |        data_type         
+---------------+------------------+-----------------------+-------------+--------------------------
+ common_lookup |                1 | common_lookup_id      | PRIMARY KEY | integer
+ common_lookup |                3 | common_lookup_type    | NOT NULL    | character varying(30)
+ common_lookup |                4 | common_lookup_meaning | NOT NULL    | character varying(30)
+ common_lookup |                5 | created_by            | NOT NULL    | integer
+ common_lookup |                6 | creation_date         | NOT NULL    | timestamp with time zone
+ common_lookup |                7 | last_updated_by       | NOT NULL    | integer
+ common_lookup |                8 | last_update_date      | NOT NULL    | timestamp with time zone
+ common_lookup |                9 | common_lookup_table   | NOT NULL    | character varying(30)
+ common_lookup |               10 | common_lookup_column  | NOT NULL    | character varying(30)
+ common_lookup |               11 | common_lookup_code    |             | character varying(2)
+(10 rows)
+

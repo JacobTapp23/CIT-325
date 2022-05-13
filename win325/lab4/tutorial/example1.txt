@@ -1,0 +1,183 @@
+[lv_list(1)][lv_mime(1)]                                                        
+[lv_list(2)][lv_mime(2)]                                                        
+[lv_list(2)][lv_mime(1)]                                                        
+[lv_list(3)][lv_mime(3)]                                                        
+[lv_list(3)][lv_mime(2)]                                                        
+[lv_list(3)][lv_mime(1)]                                                        
+[lv_list(4)][lv_mime(4)]                                                        
+[lv_list(4)][lv_mime(3)]                                                        
+[lv_list(4)][lv_mime(2)]                                                        
+[lv_list(4)][lv_mime(1)]                                                        
+[lv_list(5)][lv_mime(5)]                                                        
+[lv_list(5)][lv_mime(4)]                                                        
+[lv_list(5)][lv_mime(3)]                                                        
+[lv_list(5)][lv_mime(2)]                                                        
+[lv_list(5)][lv_mime(1)]                                                        
+[lv_list(6)][lv_mime(6)]                                                        
+[lv_list(6)][lv_mime(5)]                                                        
+[lv_list(6)][lv_mime(4)]                                                        
+[lv_list(6)][lv_mime(3)]                                                        
+[lv_list(6)][lv_mime(2)]                                                        
+[lv_list(6)][lv_mime(1)]                                                        
+[lv_list(7)][lv_mime(7)]                                                        
+[lv_list(7)][lv_mime(6)]                                                        
+[lv_list(7)][lv_mime(5)]                                                        
+[lv_list(7)][lv_mime(4)]                                                        
+[lv_list(7)][lv_mime(3)]                                                        
+[lv_list(7)][lv_mime(2)]                                                        
+[lv_list(7)][lv_mime(1)]                                                        
+[lv_list(8)][lv_mime(8)]                                                        
+[lv_list(8)][lv_mime(7)]                                                        
+[lv_list(8)][lv_mime(6)]                                                        
+[lv_list(8)][lv_mime(5)]                                                        
+[lv_list(8)][lv_mime(4)]                                                        
+[lv_list(8)][lv_mime(3)]                                                        
+[lv_list(8)][lv_mime(2)]                                                        
+[lv_list(8)][lv_mime(1)]                                                        
+[lv_list(9)][lv_mime(9)]                                                        
+[lv_list(9)][lv_mime(8)]                                                        
+[lv_list(9)][lv_mime(7)]                                                        
+[lv_list(9)][lv_mime(6)]                                                        
+[lv_list(9)][lv_mime(5)]                                                        
+[lv_list(9)][lv_mime(4)]                                                        
+[lv_list(9)][lv_mime(3)]                                                        
+[lv_list(9)][lv_mime(2)]                                                        
+[lv_list(9)][lv_mime(1)]                                                        
+[lv_list(10)][lv_mime(10)]                                                      
+[lv_list(10)][lv_mime(9)]                                                       
+[lv_list(10)][lv_mime(8)]                                                       
+[lv_list(10)][lv_mime(7)]                                                       
+[lv_list(10)][lv_mime(6)]                                                       
+[lv_list(10)][lv_mime(5)]                                                       
+[lv_list(10)][lv_mime(4)]                                                       
+[lv_list(10)][lv_mime(3)]                                                       
+[lv_list(10)][lv_mime(2)]                                                       
+[lv_list(10)][lv_mime(1)]                                                       
+[lv_list(11)][lv_mime(11)]                                                      
+[lv_list(11)][lv_mime(10)]                                                      
+[lv_list(11)][lv_mime(9)]                                                       
+[lv_list(11)][lv_mime(8)]                                                       
+[lv_list(11)][lv_mime(7)]                                                       
+[lv_list(11)][lv_mime(6)]                                                       
+[lv_list(11)][lv_mime(5)]                                                       
+[lv_list(11)][lv_mime(4)]                                                       
+[lv_list(11)][lv_mime(3)]                                                       
+[lv_list(11)][lv_mime(2)]                                                       
+[lv_list(11)][lv_mime(1)]                                                       
+[lv_list(12)][lv_mime(12)]                                                      
+[lv_list(12)][lv_mime(11)]                                                      
+[lv_list(12)][lv_mime(10)]                                                      
+[lv_list(12)][lv_mime(9)]                                                       
+[lv_list(12)][lv_mime(8)]                                                       
+[lv_list(12)][lv_mime(7)]                                                       
+[lv_list(12)][lv_mime(6)]                                                       
+[lv_list(12)][lv_mime(5)]                                                       
+[lv_list(12)][lv_mime(4)]                                                       
+[lv_list(12)][lv_mime(3)]                                                       
+[lv_list(12)][lv_mime(2)]                                                       
+[lv_list(12)][lv_mime(1)]                                                       
+[first]partridge in a pear tree.
+                                              
+
+[second]Two turtle doves,                                                       
+[second]partridge in a pear tree.
+                                             
+
+[third]Three French hens,                                                       
+[third]Two turtle doves,                                                        
+[third]partridge in a pear tree.
+                                              
+
+[fourth]Four calling birds,                                                     
+[fourth]Three French hens,                                                      
+[fourth]Two turtle doves,                                                       
+[fourth]partridge in a pear tree.
+                                             
+
+[fifth]Five gold rings,                                                         
+[fifth]Four calling birds,                                                      
+[fifth]Three French hens,                                                       
+[fifth]Two turtle doves,                                                        
+[fifth]partridge in a pear tree.
+                                              
+
+[sixth]Six geese a-laying,                                                      
+[sixth]Five gold rings,                                                         
+[sixth]Four calling birds,                                                      
+[sixth]Three French hens,                                                       
+[sixth]Two turtle doves,                                                        
+[sixth]partridge in a pear tree.
+                                              
+
+[seventh]Seven swans a-swimming,                                                
+[seventh]Six geese a-laying,                                                    
+[seventh]Five gold rings,                                                       
+[seventh]Four calling birds,                                                    
+[seventh]Three French hens,                                                     
+[seventh]Two turtle doves,                                                      
+[seventh]partridge in a pear tree.
+                                            
+
+[eighth]Eight maids a-milking,                                                  
+[eighth]Seven swans a-swimming,                                                 
+[eighth]Six geese a-laying,                                                     
+[eighth]Five gold rings,                                                        
+[eighth]Four calling birds,                                                     
+[eighth]Three French hens,                                                      
+[eighth]Two turtle doves,                                                       
+[eighth]partridge in a pear tree.
+                                             
+
+[nineth]Nine ladies dancing,                                                    
+[nineth]Eight maids a-milking,                                                  
+[nineth]Seven swans a-swimming,                                                 
+[nineth]Six geese a-laying,                                                     
+[nineth]Five gold rings,                                                        
+[nineth]Four calling birds,                                                     
+[nineth]Three French hens,                                                      
+[nineth]Two turtle doves,                                                       
+[nineth]partridge in a pear tree.
+                                             
+
+[tenth]Tenth lords a-leaping,                                                   
+[tenth]Nine ladies dancing,                                                     
+[tenth]Eight maids a-milking,                                                   
+[tenth]Seven swans a-swimming,                                                  
+[tenth]Six geese a-laying,                                                      
+[tenth]Five gold rings,                                                         
+[tenth]Four calling birds,                                                      
+[tenth]Three French hens,                                                       
+[tenth]Two turtle doves,                                                        
+[tenth]partridge in a pear tree.
+                                              
+
+[eleventh]Eleven pipers piping,                                                 
+[eleventh]Tenth lords a-leaping,                                                
+[eleventh]Nine ladies dancing,                                                  
+[eleventh]Eight maids a-milking,                                                
+[eleventh]Seven swans a-swimming,                                               
+[eleventh]Six geese a-laying,                                                   
+[eleventh]Five gold rings,                                                      
+[eleventh]Four calling birds,                                                   
+[eleventh]Three French hens,                                                    
+[eleventh]Two turtle doves,                                                     
+[eleventh]partridge in a pear tree.
+                                           
+
+[twelveth]Twelve drummers drumming,                                             
+[twelveth]Eleven pipers piping,                                                 
+[twelveth]Tenth lords a-leaping,                                                
+[twelveth]Nine ladies dancing,                                                  
+[twelveth]Eight maids a-milking,                                                
+[twelveth]Seven swans a-swimming,                                               
+[twelveth]Six geese a-laying,                                                   
+[twelveth]Five gold rings,                                                      
+[twelveth]Four calling birds,                                                   
+[twelveth]Three French hens,                                                    
+[twelveth]Two turtle doves,                                                     
+[twelveth]partridge in a pear tree.
+                                           
+
+
+PL/SQL procedure successfully completed.
+

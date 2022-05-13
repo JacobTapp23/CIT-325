@@ -1,0 +1,17 @@
+DROP TABLE ACCOUNT_LIST;                                                        
+DROP SEQUENCE ACCOUNT_LIST_S1;                                                  
+DROP TABLE ADDRESS;                                                             
+DROP INDEX ADDRESS_N1;                                                          
+DROP INDEX ADDRESS_N2;                                                          
+DROP SEQUENCE ADDRESS_S1;                                                       
+DROP TABLE AIRPORT;                                                             
+DROP SEQUENCE AIRPORT_S1;                                                       
+DROP TYPE APPLE_T;                                                              
+DROP TYPE BODY APPLE_T;                                                         
+BEGIN
+*
+ERROR at line 1:
+ORA-04043: object APPLE_T does not exist
+ORA-06512: at line 51 
+
+

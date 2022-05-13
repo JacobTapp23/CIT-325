@@ -1,0 +1,7 @@
+ common_lookup_id | common_lookup_context | common_lookup_type | common_lookup_meaning 
+------------------+-----------------------+--------------------+-----------------------
+             1020 | ITEM                  | BLU-RAY            | Blu-ray
+             1015 | ITEM                  | DVD_FULL_SCREEN    | DVD: Full Screen
+             1016 | ITEM                  | DVD_WIDE_SCREEN    | DVD: Wide Screen
+(3 rows)
+

@@ -1,0 +1,25 @@
+ rating_id |  rating  | item_rating 
+-----------+----------+-------------
+      1006 | PG       | PG
+      1006 | PG       | PG
+      1006 | PG       | PG
+      1006 | PG       | PG
+      1006 | PG       | PG
+      1002 | Mature   | Mature
+      1003 | Teen     | Teen
+      1001 | Everyone | Everyone
+      1001 | Everyone | Everyone
+      1003 | Teen     | Teen
+      1001 | Everyone | Everyone
+      1003 | Teen     | Teen
+      1001 | Everyone | Everyone
+      1006 | PG       | PG
+      1005 | NR       | NR
+      1004 | G        | G
+      1004 | G        | G
+      1006 | PG       | PG
+      1004 | G        | G
+      1004 | G        | G
+      1007 | PG-13    | PG-13
+(21 rows)
+

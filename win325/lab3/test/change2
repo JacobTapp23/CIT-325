@@ -1,0 +1,7 @@
+  /* What's the problem with this type of assignment?
+     ------------------------------------------------
+     1. You have no guarantee of the order of inputs
+        by type.
+     2. If the order differs you raise an unhandled
+        exception.
+  */

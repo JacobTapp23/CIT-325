@@ -1,0 +1,13 @@
+ account_number | last_name |        item_title        | rating_agency_abbr |  rating  
+----------------+-----------+--------------------------+--------------------+----------
+ B293-71447     | Sweeney   | Cars                     | ESRB               | Everyone
+ B293-71447     | Sweeney   | Hook                     | MPAA               | PG
+ B293-71446     | Vizquel   | Camelot                  | MPAA               | G
+ B293-71446     | Vizquel   | I Remember Mama          | MPAA               | NR
+ B293-71446     | Vizquel   | Star Wars I              | MPAA               | PG
+ B293-71446     | Vizquel   | Star Wars II             | MPAA               | PG
+ B293-71446     | Vizquel   | Star Wars III            | MPAA               | PG-13
+ B293-71445     | Winn      | RoboCop                  | ESRB               | Mature
+ B293-71445     | Winn      | The Hunt for Red October | MPAA               | PG
+(9 rows)
+

@@ -1,0 +1,61 @@
+SET
+SET
+ current_setting 
+-----------------
+ common_lookup
+(1 row)
+
+DROP TABLE
+CREATE TABLE
+ALTER SEQUENCE
+   constraint_name    |      table_name       |   column_name   | foreign_table_name  | foreign_column_name 
+----------------------+-----------------------+-----------------+---------------------+---------------------
+ videodb.fk_clookup_1 | videodb.common_lookup | created_by      | videodb.system_user | system_user_id
+ videodb.fk_clookup_2 | videodb.common_lookup | last_updated_by | videodb.system_user | system_user_id
+(2 rows)
+
+  table_name   | ordinal_position |      column_name      | is_nullable |        data_type         
+---------------+------------------+-----------------------+-------------+--------------------------
+ common_lookup |                1 | common_lookup_id      | PRIMARY KEY | integer
+ common_lookup |                2 | common_lookup_context | NOT NULL    | character varying(30)
+ common_lookup |                3 | common_lookup_type    | NOT NULL    | character varying(30)
+ common_lookup |                4 | common_lookup_meaning | NOT NULL    | character varying(30)
+ common_lookup |                5 | created_by            | NOT NULL    | integer
+ common_lookup |                6 | creation_date         | NOT NULL    | timestamp with time zone
+ common_lookup |                7 | last_updated_by       | NOT NULL    | integer
+ common_lookup |                8 | last_update_date      | NOT NULL    | timestamp with time zone
+(8 rows)
+
+  constraint_name   | constraint_type 
+--------------------+-----------------
+ common_lookup_pkey | primary key
+(1 row)
+
+ALTER TABLE
+ALTER TABLE
+  constraint_name   | constraint_type 
+--------------------+-----------------
+ common_lookup_pkey | primary key
+(1 row)
+
+DROP INDEX
+CREATE INDEX
+DROP INDEX
+CREATE INDEX
+   tablename   |      indexname      
+---------------+---------------------
+ common_lookup | common_lookup_pkey
+ common_lookup | nq_common_lookup_n1
+ common_lookup | uq_common_lookup_u1
+(3 rows)
+
+  constraint_name   | constraint_type 
+--------------------+-----------------
+ common_lookup_pkey | primary key
+(1 row)
+
+  table_name   |   column_name    |           sequence_name            
+---------------+------------------+------------------------------------
+ common_lookup | common_lookup_id | common_lookup_common_lookup_id_seq
+(1 row)
+

@@ -1,0 +1,49 @@
+SET
+ current_setting 
+-----------------
+ price
+(1 row)
+
+     Task Identifier      
+--------------------------
+ Lab 6: Step 2: Task 1(a)
+(1 row)
+
+ table_name | ordinal_position |   column_name    | is_nullable |        data_type         
+------------+------------------+------------------+-------------+--------------------------
+ price      |                1 | price_id         | PRIMARY KEY | integer
+ price      |                2 | item_id          |             | integer
+ price      |                3 | price_type       | NOT NULL    | integer
+ price      |                4 | active_flag      | NOT NULL    | character varying(1)
+ price      |                5 | start_date       | NOT NULL    | integer
+ price      |                6 | end_date         |             | integer
+ price      |                7 | amount           | NOT NULL    | 
+ price      |                8 | created_by       | NOT NULL    | integer
+ price      |                9 | creation_date    | NOT NULL    | timestamp with time zone
+ price      |               10 | last_updated_by  | NOT NULL    | integer
+ price      |               11 | last_update_date | NOT NULL    | timestamp with time zone
+(11 rows)
+
+     Task Identifier      
+--------------------------
+ Lab 6: Step 2: Task 1(b)
+(1 row)
+
+ table_from | foreign_key |                         pg_get_constraintdef                         
+------------+-------------+----------------------------------------------------------------------
+ price      | fk_price_1  | FOREIGN KEY (item_id) REFERENCES item(item_id)
+ price      | fk_price_2  | FOREIGN KEY (price_type) REFERENCES common_lookup(common_lookup_id)
+ price      | fk_price_3  | FOREIGN KEY (created_by) REFERENCES system_user(system_user_id)
+ price      | fk_price_4  | FOREIGN KEY (last_updated_by) REFERENCES system_user(system_user_id)
+(4 rows)
+
+    Task Identifier    
+-----------------------
+ Lab 6: Step 2: Task 2
+(1 row)
+
+ table_from | foreign_key |                                         pg_get_constraintdef                                          
+------------+-------------+-------------------------------------------------------------------------------------------------------
+ price      | yn_price    | CHECK (((active_flag)::text = ANY ((ARRAY['Y'::character varying, 'N'::character varying])::text[])))
+(1 row)
+

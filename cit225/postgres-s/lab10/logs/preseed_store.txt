@@ -1,0 +1,88 @@
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+INSERT 0 1
+ALTER TABLE
+ALTER TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ common_lookup_id | common_lookup_context | common_lookup_type 
+------------------+-----------------------+--------------------
+             1001 | SYSTEM_USER           | SYSTEM_ADMIN
+             1002 | SYSTEM_USER           | DBA
+             1003 | SYSTEM_USER           | SYSTEM_GROUP
+             1004 | SYSTEM_USER           | COST_CENTER
+             1005 | SYSTEM_USER           | INDIVIDUAL
+             1006 | CONTACT               | EMPLOYEE
+             1007 | CONTACT               | CUSTOMER
+             1008 | MEMBER                | INDIVIDUAL
+             1009 | MEMBER                | GROUP
+             1010 | MEMBER                | DISCOVER_CARD
+             1011 | MEMBER                | MASTER_CARD
+             1012 | MEMBER                | VISA_CARD
+             1013 | MULTIPLE              | HOME
+             1014 | MULTIPLE              | WORK
+             1015 | ITEM                  | DVD_FULL_SCREEN
+             1016 | ITEM                  | DVD_WIDE_SCREEN
+             1017 | ITEM                  | NINTENDO_GAMECUBE
+             1018 | ITEM                  | PLAYSTATION2
+             1019 | ITEM                  | XBOX
+             1020 | ITEM                  | BLU-RAY
+(20 rows)
+
+ system_user_type 
+------------------
+             1001
+(1 row)
+
+ system_group_group_id 
+-----------------------
+                  1003
+(1 row)
+
+UPDATE 1
+ system_user_id | system_user_name | system_user_group_id | system_user_type 
+----------------+------------------+----------------------+------------------
+              1 | SYSADMIN         |                 1001 |                 
+(1 row)
+
+UPDATE 1
+ system_user_id | system_user_name | system_user_group_id | system_user_type 
+----------------+------------------+----------------------+------------------
+              1 | SYSADMIN         |                 1001 |             1003
+(1 row)
+
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+INSERT 0 1
+INSERT 0 1
+ system_user_id | system_user_group_id | system_user_type | system_user_name |    full_user_name     
+----------------+----------------------+------------------+------------------+-----------------------
+              1 |                 1001 |             1003 | SYSADMIN         | 
+           1001 |                 1002 |             1003 | DBA1             | Barnum, PhineasTaylor
+           1002 |                 1002 |             1003 | DBA2             | Fogg, Phileas
+(3 rows)
+

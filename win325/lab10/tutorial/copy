@@ -1,0 +1,13 @@
+CREATE OR REPLACE
+  TYPE apple_t UNDER fruit_t
+  ( variety     VARCHAR2(20)
+  , class_size  VARCHAR2(20)
+  , CONSTRUCTOR FUNCTION apple_t
+    ( oname       VARCHAR2
+    , name        VARCHAR2
+    , variety     VARCHAR2
+    , class_size  VARCHAR2 ) RETURN SELF AS RESULT
+  , OVERRIDING MEMBER FUNCTION get_name RETURN VARCHAR2
+  , OVERRIDING MEMBER FUNCTION to_string RETURN VARCHAR2)
+  INSTANTIABLE NOT FINAL;
+/

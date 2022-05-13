@@ -1,0 +1,28 @@
+ last_name | account_number |        c_address         |   telephone    
+-----------+----------------+--------------------------+----------------
+ Winn      | B293-71445     | 10 El Camino Real       +| (408) 111-1111
+           |                | San Jose, CA 95192       | 
+ Winn      | B293-71445     | 10 El Camino Real       +| (408) 111-1111
+           |                | San Jose, CA 95192       | 
+ Vizquel   | B293-71446     | 12 El Camino Real       +| (408) 222-2222
+           |                | San Jose, CA 95192       | 
+ Vizquel   | B293-71446     | 12 El Camino Real       +| (408) 222-2222
+           |                | San Jose, CA 95192       | 
+ Sweeney   | B293-71447     | 14 El Camino Real       +| (408) 333-3333
+           |                | San Jose, CA 95192       | 
+ Sweeney   | B293-71447     | 14 El Camino Real       +| (408) 333-3333
+           |                | San Jose, CA 95192       | 
+ Sweeney   | B293-71447     | 14 El Camino Real       +| (408) 333-3333
+           |                | San Jose, CA 95192       | 
+ Clinton   | R11-514-34     | 118 South 9th East      +| (801) 423-1234
+           |                | Provo, Utah 84606        | 
+ Moss      | R11-514-35     | 1218 South 10th East    +| (801) 423-1235
+           |                | Provo, Utah 84606        | 
+ Gretelz   | R11-514-36     | 2118 South 7th East     +| (801) 423-1236
+           |                | Provo, Utah 84606        | 
+ Royal     | R11-514-37     | 2228 South 14th East    +| (801) 423-1237
+           |                | Provo, Utah 84606        | 
+ Smith     | R11-514-38     | 333 North 2nd East      +| (801) 423-1238
+           |                | Spanish Fork, Utah 84606 | 
+(12 rows)
+

@@ -1,0 +1,7 @@
+  /* What should I learn from these printing commands?
+     -------------------------------------------------
+     1. The order is equally dependent on input order.
+     2. Learn how to the members of a record, which differ
+        from the elements in a collection.
+        variable_name.member_name
+  */

@@ -1,0 +1,7 @@
+ item_rating | total_names 
+-------------+-------------
+ G           |           4
+ NR          |           1
+ PG          |           7
+(3 rows)
+

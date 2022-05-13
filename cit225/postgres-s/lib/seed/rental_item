@@ -1,0 +1,41 @@
+INSERT INTO rental_item
+( rental_id
+, item_id
+, created_by
+, last_updated_by )
+VALUES
+((SELECT   r.rental_id
+  FROM     rental r
+  ,        contact c
+  WHERE    r.customer_id = c.contact_id
+  AND      c.last_name = 'Vizquel'
+  AND      c.first_name = 'Oscar')
+,(SELECT   i.item_id
+  FROM     item i
+  ,        common_lookup cl
+  WHERE    i.item_title = 'Star Wars I'
+  AND      i.item_subtitle = 'Phantom Menace'
+  AND      i.item_type = cl.common_lookup_id
+  AND      cl.common_lookup_type = 'DVD_WIDE_SCREEN')
+, 1001
+, 1001 );
+
+INSERT INTO rental_item
+( rental_id
+, item_id
+, created_by
+, last_updated_by )
+VALUES
+((SELECT   r.rental_id
+  FROM     rental r inner join contact c
+  ON       r.customer_id = c.contact_id
+  WHERE    c.last_name = 'Vizquel'
+  AND      c.first_name = 'Oscar')
+,(SELECT   d.item_id
+  FROM     item d join common_lookup cl
+  ON       d.item_title = 'Star Wars II'
+  WHERE    d.item_subtitle = 'Attack of the Clones'
+  AND      d.item_type = cl.common_lookup_id
+  AND      cl.common_lookup_type = 'DVD_WIDE_SCREEN')
+, 1001
+, 1001 );

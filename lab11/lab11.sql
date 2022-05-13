@@ -1,0 +1,533 @@
+--  @cleanup_oracle.sql
+--  @create_video_store.sql
+
+
+-- alter table item add text_file_name VARCHAR2(40);
+-- CREATE TABLE avenger
+-- ( avenger_id    NUMBER
+-- , avenger_name  VARCHAR2(30));
+
+-- CREATE SEQUENCE avenger_s;
+
+
+
+CREATE TABLE logger
+( LOGGER_ID								   NUMBER
+,OLD_ITEM_ID									 NUMBER
+,OLD_ITEM_BARCODE						 VARCHAR2(20)
+,OLD_ITEM_TYPE								 NUMBER
+,OLD_ITEM_TITLE 							 VARCHAR2(60)
+,OLD_ITEM_SUBTITLE						 VARCHAR2(60)
+,OLD_ITEM_RATING							 VARCHAR2(8)
+,OLD_ITEM_RATING_AGENCY 			 VARCHAR2(4)
+,OLD_ITEM_RELEASE_DATE			   DATE
+,OLD_CREATED_BY 			 		     NUMBER
+,OLD_CREATION_DATE						 DATE
+,OLD_LAST_UPDATED_BY					 NUMBER
+,OLD_LAST_UPDATE_DATE				 DATE
+,OLD_TEXT_FILE_NAME					 VARCHAR2(40)
+,NEW_ITEM_ID									 NUMBER
+,NEW_ITEM_BARCODE						 VARCHAR2(20)
+,NEW_ITEM_TYPE								 NUMBER
+,NEW_ITEM_TITLE 				    	 VARCHAR2(60)
+,NEW_ITEM_SUBTITLE		 		     VARCHAR2(60)
+,NEW_ITEM_RATING				    	 VARCHAR2(8)
+,NEW_ITEM_RATING_AGENCY 			 VARCHAR2(4)
+,NEW_ITEM_RELEASE_DATE				 DATE
+,NEW_CREATED_BY 				    	 NUMBER
+,NEW_CREATION_DATE				     DATE
+,NEW_LAST_UPDATED_BY				   NUMBER
+,NEW_LAST_UPDATE_DATE				 DATE
+,NEW_TEXT_FILE_NAME				   VARCHAR2(40)
+, CONSTRAINT logger_pk PRIMARY KEY (logger_id));
+
+CREATE SEQUENCE logger_s;
+CREATE SEQUENCE item_s;
+
+COLUMN table_name   FORMAT A14
+COLUMN column_id    FORMAT 9999
+COLUMN column_name  FORMAT A22
+COLUMN data_type    FORMAT A12
+SELECT   table_name
+,        column_id
+,        column_name
+,        CASE
+           WHEN nullable = 'N' THEN 'NOT NULL'
+           ELSE ''
+         END AS nullable
+,        CASE
+           WHEN data_type IN ('CHAR','VARCHAR2','NUMBER') THEN
+             data_type||'('||data_length||')'
+           ELSE
+             data_type
+         END AS data_type
+FROM     user_tab_columns
+WHERE    table_name = 'LOGGER'
+ORDER BY 2;
+
+COL logger_id       FORMAT 9999 HEADING "Logger|ID #"
+COL old_item_id     FORMAT 9999 HEADING "Old|Item|ID #"
+COL old_item_title  FORMAT A20  HEADING "Old Item Title"
+COL new_item_id     FORMAT 9999 HEADING "New|Item|ID #"
+COL new_item_title  FORMAT A30  HEADING "New Item Title"
+SELECT l.logger_id
+,      l.old_item_id
+,      l.old_item_title
+,      l.new_item_id
+,      l.new_item_title
+FROM   logger l;
+
+CREATE OR REPLACE
+  PACKAGE log_item IS
+
+  PROCEDURE item_insert
+  ( PV_NEW_ITEM_ID 				NUMBER
+  , PV_NEW_ITEM_BARCODE		VARCHAR2	
+  , PV_NEW_ITEM_TYPE			NUMBER
+  , PV_NEW_ITEM_TITLE			VARCHAR2
+  , PV_NEW_ITEM_SUBTITLE			VARCHAR2
+  , PV_NEW_ITEM_RATING				VARCHAR2
+  , PV_NEW_ITEM_RATING_AGENCY	VARCHAR2
+  , PV_NEW_ITEM_RELEASE_DATE		DATE
+  , PV_NEW_CREATED_BY				NUMBER
+  , PV_NEW_CREATION_DATE			DATE
+  , PV_NEW_LAST_UPDATED_BY 		NUMBER
+  , PV_NEW_LAST_UPDATE_DATE		DATE
+  , PV_NEW_TEXT_FILE_NAME     VARCHAR2);
+
+  PROCEDURE item_insert
+  ( PV_OLD_ITEM_ID 		NUMBER	
+  , PV_OLD_ITEM_BARCODE		VARCHAR2
+  , PV_OLD_ITEM_TYPE				NUMBER
+  , PV_OLD_ITEM_TITLE				VARCHAR2
+  , PV_OLD_ITEM_SUBTITLE			VARCHAR2
+  , PV_OLD_ITEM_RATING				VARCHAR2
+  , PV_OLD_ITEM_RATING_AGENCY		VARCHAR2
+  , PV_OLD_ITEM_RELEASE_DATE		DATE
+  , PV_OLD_CREATED_BY				NUMBER
+  , PV_OLD_CREATION_DATE			DATE
+  , PV_OLD_LAST_UPDATED_BY 		NUMBER
+  , PV_OLD_LAST_UPDATE_DATE		DATE
+  , PV_OLD_TEXT_FILE_NAME VARCHAR2			
+  , PV_NEW_ITEM_ID 				NUMBER
+  , PV_NEW_ITEM_BARCODE		VARCHAR2	
+  , PV_NEW_ITEM_TYPE			NUMBER
+  , PV_NEW_ITEM_TITLE			VARCHAR2
+  , PV_NEW_ITEM_SUBTITLE			VARCHAR2
+  , PV_NEW_ITEM_RATING				VARCHAR2
+  , PV_NEW_ITEM_RATING_AGENCY	VARCHAR2
+  , PV_NEW_ITEM_RELEASE_DATE		DATE
+  , PV_NEW_CREATED_BY				NUMBER
+  , PV_NEW_CREATION_DATE			DATE
+  , PV_NEW_LAST_UPDATED_BY 		NUMBER
+  , PV_NEW_LAST_UPDATE_DATE		DATE
+  , PV_NEW_TEXT_FILE_NAME     VARCHAR2);
+
+  PROCEDURE item_insert
+  ( PV_OLD_ITEM_ID 		NUMBER	
+  , PV_OLD_ITEM_BARCODE		VARCHAR2
+  , PV_OLD_ITEM_TYPE				NUMBER
+  , PV_OLD_ITEM_TITLE				VARCHAR2
+  , PV_OLD_ITEM_SUBTITLE			VARCHAR2
+  , PV_OLD_ITEM_RATING				VARCHAR2
+  , PV_OLD_ITEM_RATING_AGENCY		VARCHAR2
+  , PV_OLD_ITEM_RELEASE_DATE		DATE
+  , PV_OLD_CREATED_BY				NUMBER
+  , PV_OLD_CREATION_DATE			DATE
+  , PV_OLD_LAST_UPDATED_BY 		NUMBER
+  , PV_OLD_LAST_UPDATE_DATE		DATE
+  , PV_OLD_TEXT_FILE_NAME VARCHAR2);
+
+END log_item;
+/
+
+CREATE OR REPLACE
+  PACKAGE BODY log_item IS
+
+  PROCEDURE item_insert
+  ( PV_NEW_ITEM_ID 				NUMBER
+  , PV_NEW_ITEM_BARCODE		VARCHAR2	
+  , PV_NEW_ITEM_TYPE			NUMBER
+  , PV_NEW_ITEM_TITLE			VARCHAR2
+  , PV_NEW_ITEM_SUBTITLE			VARCHAR2
+  , PV_NEW_ITEM_RATING				VARCHAR2
+  , PV_NEW_ITEM_RATING_AGENCY	VARCHAR2
+  , PV_NEW_ITEM_RELEASE_DATE		DATE
+  , PV_NEW_CREATED_BY				NUMBER
+  , PV_NEW_CREATION_DATE			DATE
+  , PV_NEW_LAST_UPDATED_BY 		NUMBER
+  , PV_NEW_LAST_UPDATE_DATE		DATE
+  , PV_NEW_TEXT_FILE_NAME     VARCHAR2) IS
+
+    /* Set an autonomous transaction. */
+    PRAGMA AUTONOMOUS_TRANSACTION;
+  BEGIN
+    /* Insert log entry for an avenger. */
+    log_item.item_insert(
+    PV_OLD_ITEM_ID 			        => NULL
+  , PV_OLD_ITEM_BARCODE		      => NULL
+  , PV_OLD_ITEM_TYPE				=> NULL
+  , PV_OLD_ITEM_TITLE				=> NULL
+  , PV_OLD_ITEM_SUBTITLE			=> NULL
+  , PV_OLD_ITEM_RATING				=> NULL
+  , PV_OLD_ITEM_RATING_AGENCY		=> NULL
+  , PV_OLD_ITEM_RELEASE_DATE		=> NULL
+  , PV_OLD_CREATED_BY				=> NULL
+  , PV_OLD_CREATION_DATE			=> NULL
+  , PV_OLD_LAST_UPDATED_BY 		=> NULL
+  , PV_OLD_LAST_UPDATE_DATE		=> NULL
+  , PV_OLD_TEXT_FILE_NAME			=> NULL
+  , PV_NEW_ITEM_ID 				=> PV_NEW_ITEM_ID
+  , PV_NEW_ITEM_BARCODE			=> PV_NEW_ITEM_BARCODE
+  , PV_NEW_ITEM_TYPE			=> PV_NEW_ITEM_TYPE
+  , PV_NEW_ITEM_TITLE				=> PV_NEW_ITEM_TITLE
+  , PV_NEW_ITEM_SUBTITLE			=> PV_NEW_ITEM_SUBTITLE
+  , PV_NEW_ITEM_RATING				=> PV_NEW_ITEM_RATING
+  , PV_NEW_ITEM_RATING_AGENCY	=> PV_NEW_ITEM_RATING_AGENCY
+  , PV_NEW_ITEM_RELEASE_DATE		=> PV_NEW_ITEM_RELEASE_DATE
+  , PV_NEW_CREATED_BY				=> PV_NEW_CREATED_BY
+  , PV_NEW_CREATION_DATE			=> PV_NEW_CREATION_DATE
+  , PV_NEW_LAST_UPDATED_BY 		=> PV_NEW_LAST_UPDATED_BY
+  , PV_NEW_LAST_UPDATE_DATE		=> PV_NEW_LAST_UPDATE_DATE
+  , PV_NEW_TEXT_FILE_NAME	=> PV_NEW_TEXT_FILE_NAME);
+  EXCEPTION
+    /* Exception handler. */
+    WHEN OTHERS THEN
+     RETURN;
+  END item_insert;
+
+  PROCEDURE item_insert
+ (  PV_OLD_ITEM_ID 		NUMBER	
+  , PV_OLD_ITEM_BARCODE		VARCHAR2
+  , PV_OLD_ITEM_TYPE				NUMBER
+  , PV_OLD_ITEM_TITLE				VARCHAR2
+  , PV_OLD_ITEM_SUBTITLE			VARCHAR2
+  , PV_OLD_ITEM_RATING				VARCHAR2
+  , PV_OLD_ITEM_RATING_AGENCY		VARCHAR2
+  , PV_OLD_ITEM_RELEASE_DATE		DATE
+  , PV_OLD_CREATED_BY				NUMBER
+  , PV_OLD_CREATION_DATE			DATE
+  , PV_OLD_LAST_UPDATED_BY 		NUMBER
+  , PV_OLD_LAST_UPDATE_DATE		DATE
+  , PV_OLD_TEXT_FILE_NAME VARCHAR2			
+  , PV_NEW_ITEM_ID 				NUMBER
+  , PV_NEW_ITEM_BARCODE		VARCHAR2	
+  , PV_NEW_ITEM_TYPE			NUMBER
+  , PV_NEW_ITEM_TITLE			VARCHAR2
+  , PV_NEW_ITEM_SUBTITLE			VARCHAR2
+  , PV_NEW_ITEM_RATING				VARCHAR2
+  , PV_NEW_ITEM_RATING_AGENCY	VARCHAR2
+  , PV_NEW_ITEM_RELEASE_DATE		DATE
+  , PV_NEW_CREATED_BY				NUMBER
+  , PV_NEW_CREATION_DATE			DATE
+  , PV_NEW_LAST_UPDATED_BY 		NUMBER
+  , PV_NEW_LAST_UPDATE_DATE		DATE
+  , PV_NEW_TEXT_FILE_NAME     VARCHAR2) IS
+
+    /* Declare local logging value. */
+    lv_logger_id  NUMBER;
+
+    /* Set an autonomous transaction. */
+    PRAGMA AUTONOMOUS_TRANSACTION;
+  BEGIN
+    /* Get a sequence. */
+    lv_logger_id := logger_s.NEXTVAL;
+
+    /* Set a savepoint. */
+    SAVEPOINT starting;
+
+    /* Insert log entry for an avenger. */
+    INSERT INTO logger
+    ( LOGGER_ID
+    , OLD_ITEM_ID 			
+  , OLD_ITEM_BARCODE		
+  , OLD_ITEM_TYPE				
+  , OLD_ITEM_TITLE				
+  , OLD_ITEM_SUBTITLE			
+  , OLD_ITEM_RATING				
+  , OLD_ITEM_RATING_AGENCY		
+  , OLD_ITEM_RELEASE_DATE		
+  , OLD_CREATED_BY				
+  , OLD_CREATION_DATE			
+  , OLD_LAST_UPDATED_BY 		
+  , OLD_LAST_UPDATE_DATE		
+  , OLD_TEXT_FILE_NAME			
+  , NEW_ITEM_ID 				
+  , NEW_ITEM_BARCODE			
+  , NEW_ITEM_TYPE			
+  , NEW_ITEM_TITLE				
+  , NEW_ITEM_SUBTITLE			
+  , NEW_ITEM_RATING				
+  , NEW_ITEM_RATING_AGENCY	
+  , NEW_ITEM_RELEASE_DATE		
+  , NEW_CREATED_BY				
+  , NEW_CREATION_DATE			
+  , NEW_LAST_UPDATED_BY 		
+  , NEW_LAST_UPDATE_DATE		
+  , NEW_TEXT_FILE_NAME )
+    VALUES
+    ( lv_logger_id
+    , PV_OLD_ITEM_ID 			
+    , PV_OLD_ITEM_BARCODE		
+    , PV_OLD_ITEM_TYPE				
+    , PV_OLD_ITEM_TITLE				
+    , PV_OLD_ITEM_SUBTITLE			
+    , PV_OLD_ITEM_RATING				
+    , PV_OLD_ITEM_RATING_AGENCY		
+    , PV_OLD_ITEM_RELEASE_DATE		
+    , PV_OLD_CREATED_BY				
+    , PV_OLD_CREATION_DATE			
+    , PV_OLD_LAST_UPDATED_BY 		
+    , PV_OLD_LAST_UPDATE_DATE		
+    , PV_OLD_TEXT_FILE_NAME			
+    , PV_NEW_ITEM_ID 				
+    , PV_NEW_ITEM_BARCODE			
+    , PV_NEW_ITEM_TYPE			
+    , PV_NEW_ITEM_TITLE				
+    , PV_NEW_ITEM_SUBTITLE			
+    , PV_NEW_ITEM_RATING				
+    , PV_NEW_ITEM_RATING_AGENCY	
+    , PV_NEW_ITEM_RELEASE_DATE		
+    , PV_NEW_CREATED_BY				
+    , PV_NEW_CREATION_DATE			
+    , PV_NEW_LAST_UPDATED_BY 		
+    , PV_NEW_LAST_UPDATE_DATE		
+    , PV_NEW_TEXT_FILE_NAME );
+
+    /* Commit the independent write. */
+    COMMIT;
+  EXCEPTION
+    /* Exception handler. */
+    WHEN OTHERS THEN
+      ROLLBACK TO starting;
+      RETURN;
+  END item_insert;
+
+  PROCEDURE item_insert
+  ( PV_OLD_ITEM_ID 		NUMBER	
+  , PV_OLD_ITEM_BARCODE		VARCHAR2
+  , PV_OLD_ITEM_TYPE				NUMBER
+  , PV_OLD_ITEM_TITLE				VARCHAR2
+  , PV_OLD_ITEM_SUBTITLE			VARCHAR2
+  , PV_OLD_ITEM_RATING				VARCHAR2
+  , PV_OLD_ITEM_RATING_AGENCY		VARCHAR2
+  , PV_OLD_ITEM_RELEASE_DATE		DATE
+  , PV_OLD_CREATED_BY				NUMBER
+  , PV_OLD_CREATION_DATE			DATE
+  , PV_OLD_LAST_UPDATED_BY 		NUMBER
+  , PV_OLD_LAST_UPDATE_DATE		DATE
+  , PV_OLD_TEXT_FILE_NAME VARCHAR2) IS
+
+    /* Set an autonomous transaction. */
+    PRAGMA AUTONOMOUS_TRANSACTION;
+  BEGIN
+    /* Insert log entry for an avenger. */
+    log_item.item_insert(
+    PV_OLD_ITEM_ID => PV_OLD_ITEM_ID			
+  , PV_OLD_ITEM_BARCODE		=> PV_OLD_ITEM_BARCODE
+  , PV_OLD_ITEM_TYPE				=> PV_OLD_ITEM_TYPE
+  , PV_OLD_ITEM_TITLE				=> PV_OLD_ITEM_TITLE
+  , PV_OLD_ITEM_SUBTITLE			=> PV_OLD_ITEM_SUBTITLE
+  , PV_OLD_ITEM_RATING				=> PV_OLD_ITEM_RATING
+  , PV_OLD_ITEM_RATING_AGENCY		=> PV_OLD_ITEM_RATING_AGENCY
+  , PV_OLD_ITEM_RELEASE_DATE		=> PV_OLD_ITEM_RELEASE_DATE
+  , PV_OLD_CREATED_BY				=> PV_OLD_CREATED_BY
+  , PV_OLD_CREATION_DATE			=> PV_OLD_CREATION_DATE
+  , PV_OLD_LAST_UPDATED_BY 		=> PV_OLD_LAST_UPDATED_BY
+  , PV_OLD_LAST_UPDATE_DATE		=> PV_OLD_LAST_UPDATE_DATE
+  , PV_OLD_TEXT_FILE_NAME			=> PV_OLD_TEXT_FILE_NAME
+  , PV_NEW_ITEM_ID 				=> NULL
+  , PV_NEW_ITEM_BARCODE			=> NULL
+  , PV_NEW_ITEM_TYPE			=> NULL
+  , PV_NEW_ITEM_TITLE				=> NULL
+  , PV_NEW_ITEM_SUBTITLE			=> NULL
+  , PV_NEW_ITEM_RATING				=> NULL
+  , PV_NEW_ITEM_RATING_AGENCY	=> NULL
+  , PV_NEW_ITEM_RELEASE_DATE		=> NULL
+  , PV_NEW_CREATED_BY				=> NULL
+  , PV_NEW_CREATION_DATE			=> NULL
+  , PV_NEW_LAST_UPDATED_BY 		=> NULL
+  , PV_NEW_LAST_UPDATE_DATE		=> NULL
+  , PV_NEW_TEXT_FILE_NAME => NULL);
+  EXCEPTION
+    /* Exception handler. */
+    WHEN OTHERS THEN
+     RETURN;
+  END item_insert;
+END log_item;
+/
+LIST
+SHOW ERRORS
+
+DECLARE
+  /* Define input values. */
+
+  LV_OLD_ITEM_ID 		        NUMBER	      := 1096;
+  LV_OLD_ITEM_BARCODE	    	VARCHAR2(20)  := NULL;
+  LV_OLD_ITEM_TYPE		    	NUMBER        := NULL;
+  LV_OLD_ITEM_TITLE			  	VARCHAR2(60)  := 'Star Wars';
+  LV_OLD_ITEM_SUBTITLE			VARCHAR2(60)  := NULL;
+  LV_OLD_ITEM_RATING				VARCHAR2(8)   := NULL;
+  LV_OLD_ITEM_RATING_AGENCY	VARCHAR2(4)   := NULL;
+  LV_OLD_ITEM_RELEASE_DATE	DATE          := NULL;
+  LV_OLD_CREATED_BY				  NUMBER        := NULL;
+  LV_OLD_CREATION_DATE			DATE          := NULL;
+  LV_OLD_LAST_UPDATED_BY 		NUMBER        := NULL;
+  LV_OLD_LAST_UPDATE_DATE		DATE          := NULL;
+  LV_OLD_TEXT_FILE_NAME     VARCHAR2(40)  := NULL;
+  LV_NEW_ITEM_ID 			    	NUMBER        := NULL;
+  LV_NEW_ITEM_BARCODE		    VARCHAR2(20)  := NULL;
+  LV_NEW_ITEM_TYPE		     	NUMBER        := NULL;
+  LV_NEW_ITEM_TITLE		    	VARCHAR2(60)  := NULL;
+  LV_NEW_ITEM_SUBTITLE			VARCHAR2(60)  := NULL;
+  LV_NEW_ITEM_RATING				VARCHAR2(8)   := NULL;
+  LV_NEW_ITEM_RATING_AGENCY	VARCHAR2(4)   := NULL;
+  LV_NEW_ITEM_RELEASE_DATE	DATE          := NULL;
+  LV_NEW_CREATED_BY				  NUMBER        := NULL;
+  LV_NEW_CREATION_DATE			DATE          := NULL;
+  LV_NEW_LAST_UPDATED_BY 		NUMBER        := NULL;
+  LV_NEW_LAST_UPDATE_DATE		DATE          := NULL;
+  LV_NEW_TEXT_FILE_NAME     VARCHAR2(40)  := NULL;
+
+BEGIN
+  log_item.item_insert(
+    PV_OLD_ITEM_ID            => LV_OLD_ITEM_ID			
+  , PV_OLD_ITEM_BARCODE	    	=> LV_OLD_ITEM_BARCODE
+  , PV_OLD_ITEM_TYPE			  	=> LV_OLD_ITEM_TYPE
+  , PV_OLD_ITEM_TITLE			  	=> LV_OLD_ITEM_TITLE
+  , PV_OLD_ITEM_SUBTITLE			=> LV_OLD_ITEM_SUBTITLE
+  , PV_OLD_ITEM_RATING				=> LV_OLD_ITEM_RATING
+  , PV_OLD_ITEM_RATING_AGENCY	=> LV_OLD_ITEM_RATING_AGENCY
+  , PV_OLD_ITEM_RELEASE_DATE	=> LV_OLD_ITEM_RELEASE_DATE
+  , PV_OLD_CREATED_BY			   	=> LV_OLD_CREATED_BY
+  , PV_OLD_CREATION_DATE			=> LV_OLD_CREATION_DATE
+  , PV_OLD_LAST_UPDATED_BY 		=> LV_OLD_LAST_UPDATED_BY
+  , PV_OLD_LAST_UPDATE_DATE		=> LV_OLD_LAST_UPDATE_DATE
+  , PV_OLD_TEXT_FILE_NAME			=> LV_OLD_TEXT_FILE_NAME
+  , PV_NEW_ITEM_ID 			    	=> LV_NEW_ITEM_ID
+  , PV_NEW_ITEM_BARCODE			  => LV_NEW_ITEM_BARCODE
+  , PV_NEW_ITEM_TYPE		    	=> LV_NEW_ITEM_TYPE
+  , PV_NEW_ITEM_TITLE				  => LV_NEW_ITEM_TITLE
+  , PV_NEW_ITEM_SUBTITLE			=> LV_NEW_ITEM_SUBTITLE
+  , PV_NEW_ITEM_RATING				=> LV_NEW_ITEM_RATING
+  , PV_NEW_ITEM_RATING_AGENCY	=> LV_NEW_ITEM_RATING_AGENCY
+  , PV_NEW_ITEM_RELEASE_DATE	=> LV_NEW_ITEM_RELEASE_DATE
+  , PV_NEW_CREATED_BY				  => LV_NEW_CREATED_BY
+  , PV_NEW_CREATION_DATE			=> LV_NEW_CREATION_DATE
+  , PV_NEW_LAST_UPDATED_BY 		=> LV_NEW_LAST_UPDATED_BY
+  , PV_NEW_LAST_UPDATE_DATE		=> LV_NEW_LAST_UPDATE_DATE
+  , PV_NEW_TEXT_FILE_NAME     => LV_NEW_TEXT_FILE_NAME);
+END;
+/
+
+CREATE OR REPLACE
+  TRIGGER item_trig
+  BEFORE INSERT OR UPDATE OF item_title ON item
+  FOR EACH ROW
+  DECLARE
+    /* Declare exception. */
+    e EXCEPTION;
+    PRAGMA EXCEPTION_INIT(e,-20001);
+  BEGIN
+    /* Check for an event and log accordingly. */
+    IF INSERTING THEN
+      /* Log the insert change to the item table in the logger table. */
+      log_item.item_insert(
+          PV_NEW_ITEM_ID => :NEW.item_id				
+  , PV_NEW_ITEM_BARCODE		=> :NEW.item_barcode
+  , PV_NEW_ITEM_TYPE			=> :NEW.item_type
+  , PV_NEW_ITEM_TITLE				=> :NEW.item_title
+  , PV_NEW_ITEM_SUBTITLE			=> :NEW.item_subtitle
+  , PV_NEW_ITEM_RATING				=> :NEW.item_rating
+  , PV_NEW_ITEM_RATING_AGENCY	=> :NEW.item_rating_agency
+  , PV_NEW_ITEM_RELEASE_DATE		=> :NEW.item_release_date
+  , PV_NEW_CREATED_BY				=> :NEW.created_by
+  , PV_NEW_CREATION_DATE			=> :NEW.creation_date
+  , PV_NEW_LAST_UPDATED_BY 		=> :NEW.last_updated_by
+  , PV_NEW_LAST_UPDATE_DATE		=> :NEW.last_update_date
+  , PV_NEW_TEXT_FILE_NAME => :NEW.text_file_name );
+
+      /* Check for an empty item_id primary key column value,
+         and assign the next sequence value when it is missing. */
+      IF :NEW.item_id IS NULL THEN
+        SELECT item_s.NEXTVAL
+        INTO   :NEW.item_id
+        FROM   dual;
+      END IF;
+    ELSIF UPDATING THEN
+      /* Log the update change to the item table in the logging table. */
+      log_item.item_insert(
+          PV_NEW_ITEM_ID => :NEW.item_id				
+  , PV_NEW_ITEM_BARCODE		=> :NEW.item_barcode	
+  , PV_NEW_ITEM_TYPE			=> :NEW.item_type
+  , PV_NEW_ITEM_TITLE				=> :NEW.item_title
+  , PV_NEW_ITEM_SUBTITLE			=> :NEW.item_subtitle
+  , PV_NEW_ITEM_RATING				=> :NEW.item_rating
+  , PV_NEW_ITEM_RATING_AGENCY	=> :NEW.item_rating_agency
+  , PV_NEW_ITEM_RELEASE_DATE		=> :NEW.item_release_date
+  , PV_NEW_CREATED_BY				=> :NEW.created_by
+  , PV_NEW_CREATION_DATE			=> :NEW.creation_date
+  , PV_NEW_LAST_UPDATED_BY 		=> :NEW.last_updated_by
+  , PV_NEW_LAST_UPDATE_DATE		=> :NEW.last_update_date
+  , PV_NEW_TEXT_FILE_NAME => :NEW.text_file_name
+  , PV_OLD_ITEM_ID 		=> :old.item_id	
+    , PV_OLD_ITEM_BARCODE		=> :old.item_barcode 
+    , PV_OLD_ITEM_TYPE				=> :old.item_type 
+    , PV_OLD_ITEM_TITLE				=> :old.item_title
+    , PV_OLD_ITEM_SUBTITLE			=> :old.item_subtitle 
+    , PV_OLD_ITEM_RATING				=> :old.item_rating
+    , PV_OLD_ITEM_RATING_AGENCY		=> :old.item_rating_agency
+    , PV_OLD_ITEM_RELEASE_DATE		=> :old.item_release_date
+    , PV_OLD_CREATED_BY				=> :old.created_by
+    , PV_OLD_CREATION_DATE			=> :old.creation_date
+    , PV_OLD_LAST_UPDATED_BY 		=> :old.last_updated_by
+    , PV_OLD_LAST_UPDATE_DATE		=> :old.last_update_date
+    , PV_OLD_TEXT_FILE_NAME => :old.text_file_name);
+    END IF;
+  END item_trig;
+/
+SHOW ERRORS
+
+CREATE OR REPLACE
+  TRIGGER item_delete_trig
+  BEFORE DELETE ON item
+  FOR EACH ROW
+  DECLARE
+    /* Declare exception. */
+    e EXCEPTION;
+    PRAGMA EXCEPTION_INIT(e,-20001);
+  BEGIN
+    IF DELETING THEN
+      /* Log the delete change to the item table in the logging table. */
+      log_item.item_insert(
+      PV_OLD_ITEM_ID 		=> :old.item_id	
+    , PV_OLD_ITEM_BARCODE		=> :old.item_barcode 
+    , PV_OLD_ITEM_TYPE				=> :old.item_type 
+    , PV_OLD_ITEM_TITLE				=> :old.item_title
+    , PV_OLD_ITEM_SUBTITLE			=> :old.item_subtitle 
+    , PV_OLD_ITEM_RATING				=> :old.item_rating
+    , PV_OLD_ITEM_RATING_AGENCY		=> :old.item_rating_agency
+    , PV_OLD_ITEM_RELEASE_DATE		=> :old.item_release_date
+    , PV_OLD_CREATED_BY				=> :old.created_by
+    , PV_OLD_CREATION_DATE			=> :old.creation_date
+    , PV_OLD_LAST_UPDATED_BY 		=> :old.last_updated_by
+    , PV_OLD_LAST_UPDATE_DATE		=> :old.last_update_date
+    , PV_OLD_TEXT_FILE_NAME => :old.text_file_name );
+    END IF;
+  END item_trig;
+/
+SHOW ERRORS
+
+/* Query the logger table. */
+/* Query the logger table. */
+COL logger_id       FORMAT 9999 HEADING "Logger|ID #"
+COL old_item_id     FORMAT 9999 HEADING "Old|Item|ID #"
+COL old_item_title  FORMAT A20  HEADING "Old Item Title"
+COL new_item_id     FORMAT 9999 HEADING "New|Item|ID #"
+COL new_item_title  FORMAT A30  HEADING "New Item Title"
+SELECT l.logger_id
+,      l.old_item_id
+,      l.old_item_title
+,      l.new_item_id
+,      l.new_item_title
+FROM   logger l;

@@ -1,0 +1,15 @@
+INSERT INTO rental
+( customer_id
+, check_out_date
+, return_date
+, created_by
+, last_updated_by )
+VALUES
+((SELECT   contact_id
+  FROM     contact
+  WHERE    last_name = 'Vizquel'
+  AND      first_name = 'Doreen')
+, CURRENT_DATE
+, CURRENT_DATE + INTERVAL '5 day'
+, 1001
+, 1001 );

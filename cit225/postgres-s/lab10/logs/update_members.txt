@@ -1,0 +1,14 @@
+UPDATE 8
+ALTER TABLE
+ member_id | members | member_type | common_lookup_id | common_lookup_type 
+-----------+---------+-------------+------------------+--------------------
+      1001 |       2 |        1009 |             1009 | GROUP
+      1002 |       2 |        1009 |             1009 | GROUP
+      1003 |       3 |        1009 |             1009 | GROUP
+      1004 |       1 |        1008 |             1008 | INDIVIDUAL
+      1005 |       1 |        1008 |             1008 | INDIVIDUAL
+      1006 |       1 |        1008 |             1008 | INDIVIDUAL
+      1007 |       1 |        1008 |             1008 | INDIVIDUAL
+      1008 |       1 |        1008 |             1008 | INDIVIDUAL
+(8 rows)
+

@@ -1,0 +1,5 @@
+insert into demo
+( demo_id, demo_date, demo_text )
+values
+( 1, 'Text', '20-JAN-2019' )
+/

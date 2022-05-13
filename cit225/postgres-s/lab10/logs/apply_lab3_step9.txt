@@ -1,0 +1,6 @@
+ common_lookup_id | common_lookup_context | common_lookup_type | credit_cards 
+------------------+-----------------------+--------------------+--------------
+             1010 | MEMBER                | DISCOVER_CARD      |            3
+             1012 | MEMBER                | VISA_CARD          |            5
+(2 rows)
+

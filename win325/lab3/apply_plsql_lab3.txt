@@ -1,0 +1,24 @@
+Log: apply_plsql_lab3.txt
+==================================================
+Test Case: Valid number, string, null             
+--------------------------------------------------
+RECORD [38] [catch22] []
+
+PL/SQL procedure successfully completed.
+
+==================================================
+Test Case: Valid number, string, and date         
+--------------------------------------------------
+RECORD 1 [aerodromes] 1
+
+PL/SQL procedure successfully completed.
+
+==================================================
+Test Case: Valid number, string, and invalid date 
+--------------------------------------------------
+Message
+RECORD 1 [dagger] []
+
+PL/SQL procedure successfully completed.
+
+==========================================

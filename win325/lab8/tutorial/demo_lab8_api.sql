@@ -1,0 +1,151 @@
+CREATE OR REPLACE PACKAGE fivetable IS
+  PROCEDURE warner_brother
+  ( pv_grandma_house       VARCHAR2
+  , pv_tweetie_bird_house  VARCHAR2 );
+  FUNCTION warner_brother
+  ( pv_grandma_house       VARCHAR2
+  , pv_tweetie_bird_house  VARCHAR2 ) RETURN NUMBER;
+END twotable;
+/
+
+CREATE OR REPLACE PACKAGE BODY twotable IS
+
+  /* Local package only function. */
+  FUNCTION get_grandma_id
+  ( pv_grandma_house  VARCHAR2 ) RETURN NUMBER IS
+
+    /* Default local return value for false. */
+    lv_retval  NUMBER := 0;
+
+    /* Use a cursor, which will not raise an exception at runtime. */
+    CURSOR find_grandma_id
+    ( cv_grandma_house  VARCHAR2 ) IS
+      SELECT grandma_id
+      FROM   grandma
+      WHERE  grandma_house = cv_grandma_house;
+
+  BEGIN
+
+    /* Assign a value when a row exists, or true. */
+    FOR i IN find_grandma_id(pv_grandma_house) LOOP
+      lv_retval := i.grandma_id;
+    END LOOP;
+
+    /* Return 0 when no row found anuserd the ID # when row found. */
+    RETURN lv_retval;
+  END get_grandma_id;
+
+  PROCEDURE warner_brother
+  ( pv_grandma_house       VARCHAR2
+  , pv_tweetie_bird_house  VARCHAR2 ) IS
+
+    /* Declare a local variable for an existing grandma_id. */
+    lv_grandma_id       NUMBER;
+    lv_tweetie_bird_id  NUMBER;
+
+  BEGIN
+
+    /* Set the savepoint. */
+    SAVEPOINT starting;
+
+    /* Check for existing grandma row. */
+    lv_grandma_id := get_grandma_id(pv_grandma_house);
+
+    /* Assign grandma_seq.currval to local variable. */
+    IF lv_grandma_id = 0 THEN
+      lv_grandma_id := table_api.grandma ( pv_grandma_id => lv_grandma_id
+                                         , pv_grandma_house => pv_grandma_house );
+    END IF;
+
+    /* Insert tweetie bird. */
+      lv_tweetie_bird_id := 
+        table_api.tweetie_bird( pv_tweetie_bird_house => pv_tweetie_bird_house
+                              , pv_grandma_id => lv_grandma_id );
+
+
+    /* If the program gets here, both insert statements work. Commit it. */
+    COMMIT;
+
+  EXCEPTION
+
+    /* When anything is broken do this. */
+    WHEN OTHERS THEN
+      /* Until any partial results. */
+      ROLLBACK TO starting;
+
+  END warner_brother;
+
+  FUNCTION warner_brother
+  ( pv_grandma_house       VARCHAR2
+  , pv_tweetie_bird_house  VARCHAR2 ) RETURN NUMBER IS
+
+    /* Declare a local variable for an existing grandma_id and
+       default return variable as a failure. */
+    lv_grandma_id       NUMBER;
+    lv_tweetie_bird_id  NUMBER;
+    lv_retval           NUMBER := 0;
+
+    /* Precompiler Instruction. */
+    PRAGMA autonomous_transaction;
+  BEGIN
+
+    /* Set the savepoint. */
+    SAVEPOINT starting;
+
+    /* Check for existing grandma row. */
+    lv_grandma_id := get_grandma_id(pv_grandma_house);
+
+    /* Assign grandma_seq.currval to local variable. */
+    IF lv_grandma_id = 0 THEN
+      lv_grandma_id := table_api.grandma ( pv_grandma_id => lv_grandma_id
+                                         , pv_grandma_house => pv_grandma_house );
+    END IF;
+
+    /* Insert tweetie bird. */
+    lv_tweetie_bird_id := 
+      table_api.tweetie_bird( pv_tweetie_bird_house => pv_tweetie_bird_house
+                            , pv_grandma_id => lv_grandma_id );
+
+    /* If the program gets here, both insert statements work. Commit it. */
+    COMMIT;
+
+    /* Return the value of succes. */
+    lv_retval := 1;
+
+    /* Return the value. */
+    RETURN lv_retval;
+  EXCEPTION
+
+    /* When anything is broken do this. */
+    WHEN OTHERS THEN
+      /* Until any partial results. */
+      ROLLBACK TO starting;
+  END warner_brother;
+END twotable;
+/
+
+LIST
+SHOW ERRORS
+
+DECLARE
+  /* Declare a control variable. */
+  lv_retval  NUMBER := 1;
+BEGIN
+  /* Test the warner_brother procedure. */
+  twotable.warner_brother( pv_grandma_house      => 'Yellow House'
+                         , pv_tweetie_bird_house => 'Cage');
+ 
+  /* Test the warner_brother function. */
+  IF twotable.warner_brother( pv_grandma_house      => 'Yellow House'
+                            , pv_tweetie_bird_house => 'Tree House'  ) = 0 THEN
+    dbms_output.put_line('[warner_brother] function was successful');
+  END IF;
+END;
+/
+
+COL grandma_id          FORMAT 9999999  HEADING "Grandma|ID #"
+COL grandma_house       FORMAT A20      HEADING "Grandma House"
+COL tweetie_bird_id     FORMAT 9999999  HEADING "Tweetie|Bird ID"
+COL tweetie_bird_house  FORMAT A20      HEADING "Tweetie Bird House"
+SELECT *
+FROM   grandma NATURAL JOIN tweetie_bird;
